@@ -1,0 +1,599 @@
+---
+permalink: sample-api-queries.html
+sidebar: sidebar
+keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
+summary: "The Digital Advisor GraphQL API has limitations in place to protect against excessive or abusive calls to Digital Advisor's servers"
+---
+= Use Digital Advisor GraphQL API example queries
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+After you've generated your tokens and learned how to create a GraphQL request, you can use the example queries to retrieve various types of data from the Digital Advisor GraphQL API.
+
+Before you use the GraphQL query examples, review the following information:
+
+* Replace `$variableName` with actual values or use GraphQL variables.
+* Use cursor-based pagination for better performance with large datasets.
+* Adjust the `pageSize` based on your application's needs.
+* Include only the fields you need to optimize query performance.
+* Consider using fragments for reusable field sets.
+* Test your queries in the GraphQL Playground or a similar tool before implementation.
+
+For more example GraphQL queries, refer to the link:https://studio.apollographql.com/public/ActiveIQ-Graph-Prd-API/variant/current/explorer?collectionId=3c60f539-811a-4494-bfa6-55240b953cbf&focusCollectionId=3c60f539-811a-4494-bfa6-55240b953cbf[Apollo Studio explorer collections^].
+
+== Fleet-wide inventory management
+
+=== Retrieve a list of sites
+
+You can use this query to fetch a list of site IDs that are to be used in subsequent queries.
+
+[source,graphql]
+----
+query($customerId: String, $after: String) {
+  sites(customerId: $customerId, after: $after, pageSize: 10) {
+    cursor
+    sites {
+      id
+      name
+    }
+  }
+}
+----
+
+=== Retrieve a list of customers 
+
+You can use this query to fetch a list of customer IDs that are to be used in subsequent queries.
+
+[source,graphql]
+----
+query($customerId: String, $after: String) {
+  customers(customerId: $customerId, after: $after, pageSize: 10) {
+    customers {
+      id
+      name
+    }
+  }
+}
+----
+
+=== Track all purchased systems
+
+You can use this query to identify which systems are sending telemetry data. This automatically detects gaps in telemetry and for automatic case generation.
+
+[source,graphql]
+----
+query($customerId: String, $after: String) {
+  # Get a summary of AutoSupport status across the fleet
+  summary(customerId: $customerId) {
+    system
+    countByField(countBy: AUTOSUPPORT_STATUS) {
+      fieldName
+      counts {
+        system
+      }
+    }
+  }
+  
+  # Fetch systems that are not sending telemetry data
+  systems (customerId: $customerId, autoSupportStatus: [OFF, NA, DECLINE, RSS], after: $after, pageSize: 10) {
+    cursor
+    totalCount
+    systems {
+      serialNumber
+      systemId
+      autoSupportConfig {
+        autoSupportStatus
+      }
+    }
+  }
+}
+----
+
+=== View sites and contacts 
+
+You can use this query to understand where systems are deployed and who the key contacts are for each location.
+
+[source,graphql]
+----
+query($customerId: String, $after: String) {
+  # Fetch systems along with their site and contact information
+  systems(customerId: $customerId, after: $after, pageSize: 10) {
+    cursor
+    totalCount
+    systems {
+      serialNumber
+      systemId
+      site {
+        id
+        name
+        streetAddress
+        city
+        state
+        postalCode
+        countryCode
+      }
+      contactPerson {
+        firstName
+        lastName
+        email
+        phone
+      }
+      sam {
+        name
+        emailAddress
+        managerEmailAddress
+      }
+      csm {
+        name
+        emailAddress
+        managerEmailAddress
+      }
+      salesRepresentative {
+        name
+        emailAddress
+        managerEmailAddress
+      }
+    }
+  }
+}
+----
+
+=== Access the latest configuration details of the system
+
+You can use this query to access the latest configuration details of the system based on its last check-in. This includes a wide range of available attributes including software versions.
+
+[source,graphql]
+----
+query($customerId: String, $after: String) {
+  # Fetch systems with their autosupport configuration details and OS information
+  systems(customerId: $customerId, after: $after, pageSize: 10) {
+    cursor
+    totalCount
+    systems {
+      serialNumber
+      systemId
+      osType
+      osVersion
+      platformType
+      hardwareModel {
+        name
+      }
+      autoSupportConfig {
+        autoSupportStatus
+        autoSupportTransport
+        isAsupRetransmitEnabled
+        isAutoSupportOnDemandCapable
+        isAutoSupportOnDemandEnabled
+      }
+    }
+  }
+}
+----
+
+=== Analyze current and forecasted capacity and storage efficiency 
+
+You can use this query to analyze the current and forecasted capacity and storage efficiency for ONTAP, E-Series, and StorageGRID systems.
+
+[source,graphql]
+----
+query($customerId: String, $after: String) {
+  systems(customerId: $customerId, after: $after, pageSize: 10) {
+    cursor
+    totalCount
+    systems {
+      serialNumber
+      systemId
+      ... on ONTAPSystem {
+        capacity {
+          logical {
+            usedKiB
+            usedSnapshotsKiB
+            usedWithoutSnapshotsKiB
+            usedSnapshotsAndFlexClonesKiB
+            usedWithoutSnapshotsAndFlexClonesKiB
+          }
+          physical {
+            usedKiB
+            usedSnapshotsKiB
+            usedWithoutSnapshotsKiB
+            usedSnapshotsAndFlexClonesKiB
+            usedWithoutSnapshotsAndFlexClonesKiB
+          }
+          reportedOn
+          lastAsupId
+        }
+        monthlyCapacity {
+          month
+          physical {
+            rawMarketingKiB
+            utilizationPercentage
+          }
+          reportedOn
+          lastAsupId
+        }
+      }
+      ... on SantricitySystem {
+        capacity {
+          configured {
+            freeKiB
+            allocatedKiB
+          }
+          totalKiB
+          unconfiguredKiB
+          reportedOn: updatedOn
+          lastAsupId
+        }
+      }
+      ... on StorageGrid {
+        gridCapacity {
+          configured {
+            usableKiB
+            usedDataKiB
+            reservedMetadataKiB
+            usedMetadataKiB
+          }
+          overhead {
+            reservedMetadataKiB
+          }
+          physical {
+            actualKiB
+            rawMarketingKiB
+          }
+          reportedOn
+          lastAsupId
+        }
+      }
+    }
+  }
+}
+----
+
+=== Discover end-of-support dates for systems, shelves, and disks 
+
+You can use this query to proactively plan for future tech refreshes by discovering the end-of-support dates for systems, shelves, and disks.
+
+[source,graphql]
+----
+query($customerId: String, $after: String) {
+  systems(customerId: $customerId, after: $after, pageSize: 10) {
+    cursor
+    totalCount
+    systems {
+      serialNumber
+      systemId
+      platformType
+      hardwareModel {
+        name
+        endOfSupport
+        endOfAvailability
+      }
+      techRefreshStatus
+      ... on ONTAPSystem {
+        shelvesSummary {
+          count
+          shelfModuleCount
+          endOfSupportDate
+          hardwareModel {
+            name
+            endOfSwSupport
+            endOfHwSupport
+            endOfAvailability
+          }
+          moduleHardwareModel {
+            name
+            endOfSwSupport
+            endOfHwSupport
+            endOfAvailability
+          }
+        }
+        drivesSummary {
+          count
+          model
+          driveType
+          driveModel
+          driveCapacityKiB
+          endOfSupportDate
+        }
+      }
+    }
+  }
+}
+----
+
+=== Monitor policy variations (PVRs) 
+
+You can use this query to monitor policy variations (PVRs) for your systems along with their expiration dates.
+
+[source,graphql]
+----
+query($customerId: String, $after: String) {
+  systems(customerId: $customerId, after: $after, pageSize: 10) {
+    cursor
+    totalCount
+    systems {
+      serialNumber
+      systemId
+      hasPvr
+      pvrs {
+        id
+        info
+        validFrom
+        validTo
+      }
+    }
+  }
+}
+----
+
+=== Review contract details
+
+You can use this query to view contract details, including hardware and software contract dates and identifiers.
+
+[source,graphql]
+----
+query($customerId: String, $after: String) {
+  systems(customerId: $customerId, after: $after, pageSize: 10) {
+    cursor
+    totalCount
+    systems {
+      serialNumber
+      systemId
+      platformType
+      contract {
+        expiryDate
+        isContractActive
+        hardwareContractId
+        hardwareContractStartDate
+        hardwareContractEndDate
+        hardwareWarrantyStartDate
+        hardwareWarrantyEndDate
+        hardwareServiceLevel
+        softwareContractId
+        softwareContractStartDate
+        softwareContractEndDate
+        nrdContractId
+        nrdContractStartDate
+        nrdContractEndDate
+        overallContractEndDate
+      }
+    }
+  }
+}
+----
+
+== Support Case Management
+
+You can use this query to determine which assets have open support cases and their current status.
+
+[source,graphql]
+----
+query($customerId: String, $after: String) {
+  cases(customerId: $customerId, after: $after, pageSize: 10) {
+    cursor
+    cases {
+      caseId
+      description
+      type
+      status
+      symptom
+      created
+      closed
+      caseReceivedVia
+      priority
+      reporterContact {
+        userId
+        name
+      }
+      rmaParts {
+        numberOfRequestsCreated
+        partRequestId
+        partRequestItemId
+        partRequestItemNumber
+        partNumber
+        partDescription
+        partRequestCreatedDate
+        partRequestDeliveryDate
+        waybillNumber
+      }
+      resolution
+      lastUpdated
+    }
+  }
+}
+----
+
+== Risk Management
+
+=== Discover and monitor risk
+
+You can use this query to discover and monitor security, upgrade, best practice, configuration, community, and AI issues.
+
+[source,graphql]
+----
+query($customerId: String, $after: String) {
+  # Fetch count of risks for critical and high severity issues
+  risksCount (
+    customerId: $customerId,
+    filter: {
+      severity: [
+        CRITICAL
+        HIGH
+      ]
+    }
+  ) {
+    riskCount
+    systemCount
+    actionCount
+  }
+  # Fetch risks for critical and high severity issues
+  risks(
+    customerId: $customerId,
+    after: $after,
+    pageSize: 10,
+    filter: {
+      severity: [
+        CRITICAL
+        HIGH
+      ]
+    }
+  ) {
+    cursor
+    risks {
+      riskId
+      impactArea
+      severity
+      shortName
+      riskDetail
+      mitigationAction
+      potentialImpact
+      riskInstances {
+        system {
+          serialNumber
+          systemId
+          platformType
+        }
+      }
+    }
+  }
+}
+----
+
+=== Receive recommendations 
+
+You can use this query to receive actionable recommendations to prevent issues before they occur.
+
+[source,graphql]
+----
+query($customerId: String, $after: String) {
+  # Fetch risks for critical and high severity issues with playbook and corrective action details
+  risks(
+    customerId: $customerId,
+    after: $after,
+    pageSize: 10,
+    filter: {
+      severity: [
+        CRITICAL
+        HIGH
+      ]
+    }
+  ) {
+    cursor
+    risks {
+      riskId
+      impactArea
+      severity
+      shortName
+      playbook
+      correctiveAction {
+        url
+        displayName
+      }
+      riskInstances {
+        system {
+          serialNumber
+          systemId
+          platformType
+        }
+      }
+    }
+  }
+}
+----
+
+== Sustainability and energy management
+
+You can use this query to monitor actual and published power consumption, as well as projected power, heat, and carbon metrics.
+
+[source,graphql]
+----
+query($siteId: String) {
+  # Fetch sites with their carbon emission data
+  sites(siteId: $siteId) {
+    cursor
+    sites {
+      id
+      name
+      carbonEmission {
+        emissionFactorPerKwh
+        carbonMitigation {
+          mitigationPercentage
+          modifiedDate
+          userModified
+        }
+        source {
+          name
+          url
+        }
+      }
+    }
+  }
+
+  # Fetch sustainability scores for a specific site
+  sustainabilityScore(siteId: $siteId) {
+    cursor
+    sustainabilityScores  {
+      changeFactors
+      generatedDate
+      percentageChange
+      scorePercentage
+    }
+  }
+}
+----
+
+== Upgrade recommendations and history
+
+=== Track recommendations and history
+
+You can use this query to track upgrade recommendations and history, including which systems were upgraded, when, and to which versions.
+
+[source,graphql]
+----
+query($customerId: String, $after: String) {
+  clusters(customerId: $customerId, after: $after, pageSize: 10) {
+    cursor
+    clusters {
+      id
+      name
+      osUpgradeHistory {
+        fromVersion
+        toVersion
+        postUpgradeAsupId
+        postUpgradeAsupGenDate
+      }
+    }
+  }
+}
+----
+
+=== Retrieve recommendations
+
+You can use this query to retrieve recommendations on where to upgrade next and readiness for the upgrade across your fleet.
+
+[source,graphql]
+----
+query($customerId: String, $after: String) {
+  clusters(customerId: $customerId, after: $after, pageSize: 10) {
+    cursor
+    clusters {
+      id
+      name
+      osRecommendation {
+        recommendedVersion
+        recommendedLatestPatch
+        upgradeImageUrl
+        upgradeImageUrls {
+          upgradeAutomationEncryptedPath
+          upgradeAutomationUnencryptedPath
+        }
+        customUpgradeVersionStates {
+          version
+          supportState
+        }
+      }
+    }
+  }
+}
+----
+

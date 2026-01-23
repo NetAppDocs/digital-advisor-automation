@@ -1,9 +1,30 @@
 indexpage:
-  lead: # single paragraph, shown on the page
-  tiles:
-    # one or more tile definitions for the page
-  - title: # short string (tile title)
-    links:
-      # one or more links on the tile
-      - title: # short string (link title)
-        url: # single file name or external URL
+  title: NetApp Digital Advisor documentation
+  lead: NetApp Digital Advisor leverages programmatic and artificial intelligence to analyze telemetry and product data. This provides proactive care and optimization for your data infrastructure and delivers actionable predictive analytics for NetApp environments through API access to telemetry-driven insights and install-base details. Digital Advisor APIs enable integration of these analytics into organizational workflows, dashboards, and fleet management systems.
+  summary: NetApp Digital Advisor leverages programmatic and artificial intelligence to analyze telemetry and product data. This provides proactive care and optimization for your data infrastructure and delivers actionable predictive analytics for NetApp environments through API access to telemetry-driven insights and install-base details. Digital Advisor APIs enable integration of these analytics into organizational workflows, dashboards, and fleet management systems.
+  keywords: netapp digital advisor documentation active iq
+  tiles: 
+    - title: Get started
+      links: 
+        - title: Learn about Digital Advisor APIs
+          url: /learn-about.html
+        - title: Queries and mutations 
+          url: /queries-mutations.html
+        - title: Pagination
+          url: /pagination.html
+        - title: Rate and query limits
+          url: /rate-query-limits.html
+    - title: Use Digital Advisor APIs
+      links: 
+        - title: Generate access and refresh tokens
+          url: /authentication.html
+        - title: Use the Digital Advisor GraphQL APIs
+          url: /create-request.html
+        - title: Use example queries
+          url: /sample-api-queries.html
+    - title: More resources
+      links: 
+        - title: Digital Advisor documentation
+          url: https://docs.netapp.com/us-en/active-iq/index.html
+        - title: Digital Advisor Web Portal
+          url: https://mysupport.netapp.com/myautosupport/home.html

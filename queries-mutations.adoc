@@ -1,0 +1,170 @@
+---
+permalink: queries-mutations.html
+sidebar: sidebar
+keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
+summary: "Describes new features, upgrade notes, fixed issues, known limitations, and known issues."
+---
+= Digital Advisor GraphQL API data queries and mutations
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+The Digital Advisor GraphQL API offers flexibility and the ability to define precisely the data you want to fetch.
+
+The two types of allowed operations in Digital Advisor's GraphQL API are queries and mutations. Queries and mutations share similar attributes, with some important differences.
+
+== Queries
+
+GraphQL queries return only the data you specify. Comparing GraphQL to REST, queries operate like GET requests.  To create a query, you must specify nested subfields until you return only scalar values.
+
+.Example query structure:
+
+[source,graphql]
+----
+query {
+  JSON-OBJECT-TO-RETURN
+}
+----
+
+== Mutations
+
+Comparing GraphQL to REST, mutations operate like POST, PATCH, and DELETE requests. The mutation name determines which modification is executed. To create a mutation, you must specify:
+
+* The mutation name. This is the type of modification you want to perform.
+* The input object. This is the data you want to send to the server, composed of input fields. This is passed as an argument to the mutation name.
+* The payload object. The data you want to return from the server, composed of return fields. This is passed as the body of the mutation name.
+
+.Mutation structure example:
+
+The input object in the following example is `MutationNameInput` and the payload object is `MutationNamePayload`.
+
+[source,graphql]
+----
+mutation {
+  MUTATION-NAME(input: {MUTATION-NAME-INPUT!}) {
+    MUTATION-NAME-PAYLOAD
+  }
+}
+----
+
+== Variables
+
+Variables can make queries more dynamic and powerful, and they also can reduce complexity when passing mutation input objects.
+
+.Example query with a single variable:
+
+[source,graphql]
+----
+query($customerId: String) {
+  system(customerId: $customerId) {
+    systems {
+      systemId
+      serialNumber
+    }
+  }
+}
+variables {
+  "customerId": "12345"
+}
+----
+
+=== Use variables in a query
+
+There are three steps required to use variables in your queries.
+
+.Steps
+
+. Define the variable outside the operation in a variables object:
++
+[source,json]
+----
+{ 
+  variables: {
+    "customerId": "12345"
+  }
+}
+----
++
+The object must be a valid JSON object. This example shows a simple string variable type, but it's possible to define more complex variable types, such as input objects. You can also define multiple variables here.
+
+. Pass the variable to the operation as an argument:
++
+[source,graphql]
+----
+query($customerId: String) {
+----
++
+The argument is a key-value pair, where the key is the name starting with $ (such as `$customerId`), and the value is the type (such as `String`). Add a "!" character to indicate whether the type is required. If you've defined multiple variables, include them here as multiple arguments.
+
+. Use the variable within the operation:
++
+[source,graphql]
+----
+system(customerId: $customerId) {
+----
++
+In this example, you substitute the variable for the customer ID you want to retrieve. You specified a type in step 2 because GraphQL enforces strong typing.
+
+This process makes the query argument dynamic. You can simply change the value in the variables object and keep the rest of the query the same. Using variables as arguments lets you dynamically update values in the variables object without changing the query.
+
+== Example query
+
+The following query looks up the customerId "123", fetches the first 10 systems, and returns each system's systemId, serialNumber, and capacity information:
+
+[source,graphql]
+----
+query {
+  systems(customerId: "123", pageSize: 10) {
+    systems {
+      serialNumber
+      systemId
+      ... on ONTAPSystem {
+        capacity {
+          logical {
+            usedKiB
+          }
+          physical {
+            usedKiB
+          }
+        }
+      }
+    }
+  }
+}
+----
+
+== Example mutation
+
+Mutations often require information that you can only find by performing a query first. This example shows two operations:
+
+* A query to find risk instances for a specific risk ID.
+* A mutation to acknowledge a specific risk on a system.
+
+[source,graphql]
+----
+query {
+  riskInstances(filter:  {
+     riskIds: ["123"]
+  }) {
+    cursor
+    totalCount
+    riskInstances {
+      risk {
+        riskId
+      }
+      system {
+        serialNumber
+        systemId
+      }
+    }
+  }
+}
+
+mutation {
+  riskAcknowledge(acknowledgedBy: 'test-user', riskAcknowledgementFlag: true, justification: 'test acknowledge', riskId: "123", systemKeys: [{ serialNumber: "ABC123"}]) {
+    message
+    status
+    updatedCount
+  }
+}
+----

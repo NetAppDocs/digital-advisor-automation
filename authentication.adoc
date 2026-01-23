@@ -1,0 +1,82 @@
+---
+permalink: authentication.html
+sidebar: sidebar
+keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
+summary: "Authenticate using user access tokens to start using the Digital Advisor APIs"
+---
+= Generate your Digital Advisor API access and refresh tokens
+
+[.lead]
+Learn how to generate and refresh the required tokens before using the Digital Advisor APIs. The tokens ensure that only authorized persons and systems can access your NetApp information.
+
+== Generate your tokens
+
+You need to generate an access token and a refresh token before you can use the Digital Advisor GraphQL APIs. 
+
+.About this task
+
+* The access and refresh tokens you generate are only valid for a limited time:
+** Access token: Valid for 1 hour. You use this in your API requests.
+** Refresh token: Valid for 7 days. You use this to get a new access token.
+* Always save the latest refresh token after each refresh.
+* Store your tokens securely (such as in a password manager or secure file).
+* Never share your tokens or email them to anyone.
+* If possible, automate token refresh in scripts or applications.
+* Set reminders to log in and get a new set of tokens every 90 days.
+* Systems without valid support contracts will no longer show up in the responses after 90 days.
+
+.Before you begin
+
+* You must have valid NetApp Support Site credentials.
+
+.Steps
+
+. Navigate to link:https://activeiq.netapp.com[Digital Advisor (ActiveIQ)] and sign in using your NetApp Support Site credentials.
+
+. In the top navigation bar, select *Quick Links*, and then select *API Services*.
+
+. Select *Register for API access*, and then select *Register*.
+.. Complete the request for the authorization form, and the select *Submit*.
++
+NOTE: Activation is automatic and should be instantaneous. After you are authorized to use the Digital Advisor APIs, you can generate tokens to use when making programmatic API calls. Tokens always come in sets of two: an access token and a refresh token. The access token must be passed to successfully use all APIs (except for one) and the refresh token is used to programmatically obtain a new set of tokens.
++
+. After your registration is approved, go back to the *API Services* page, and select *Generate Token*. 
++
+You can now view and download the access and refresh tokens required to use the Digital Advisor APIs.
+. Save your tokens.
++
+The portal gives you multiple ways to save one or both tokens in the set. You can copy them to the clipboard, download them as a text file, or view them as plain text.
+
+CAUTION: You must download and save the access token and refresh token for later use. Access tokens expire one hour after generation and refresh tokens should be regenerated manually every 7 days and installed in the application. To do this, you do not need to log in to the application. However, after 90 days, you need to log in to the application to obtain a new access and a refresh token.
+
+== Use your access token
+
+The following curl example shows how to use your access token in an API request.
+
+[source,bash]
+----
+curl -X POST https://gql.aiq.netapp.com/graphql \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "query getSystems { systems { totalCount cursor systems { serialNumber systemId platformType } } }"}'
+----
+
+
+== Refresh your tokens
+
+Your refresh token is valid for 7 days and you must use it to refresh within that timeframe. When you refresh with the API, you receive a new refresh token. You must save the new token and use it the next time you need to refresh your tokens.
+
+NOTE: You can repeat this process (refreshing and saving the new token) for *90 days* from your original login date. You *must* log in interactively after 90 days and get a new set of tokens.
+
+The following curl example shows how to refresh your tokens:
+
+[source,bash]
+----
+curl -X POST https://api.activeiq.netapp.com/v1/tokens/accessToken \
+  -H "Content-Type: application/json" \
+  -d '{"refreshToken": "YOUR_REFRESH_TOKEN"}'
+----
+
+The response includes a new access token and refresh token.
+
+
