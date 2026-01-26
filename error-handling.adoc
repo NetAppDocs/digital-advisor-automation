@@ -2,14 +2,14 @@
 permalink: error-handling.html
 sidebar: sidebar
 keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
-summary: "Authenticate using user access tokens to start using the Digital Advisor APIs"
+summary: "When the GraphQL Server encounters errors while processing an Digital Advisor GraphQL API operation, its response to the client includes an array containing each error that occurred."
 ---
 = Error handling in Digital Advisor GraphQL APIs
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-When the GraphQL Server encounters errors while processing an Digital Advisor GraphQL API operation, its response to the client includes an array containing each error that occurred. 
+When the GraphQL server encounters errors while processing an Digital Advisor GraphQL API operation, its response to the client includes an array containing each error that occurred. 
 
 Each error in the array has an `extensions` field that provides additional useful information, including an error code and a message. GraphQL allows for a partial response, with omitted entries logged in the errors array showing a reason and a partial success for updates.
 

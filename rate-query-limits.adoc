@@ -15,7 +15,7 @@ The Digital Advisor GraphQL API has limitations in place to protect against exce
 
 The GraphQL API assigns points to each query and limits the requests that you can use within a specific amount of time. This limit helps prevent abuse and denial-of-service attacks, and ensures that the API remains available for all users.
 
-There is a limit of 300 requests in any five minute period for each originating IP address. If this limit is exceeded, the client receives the "Too Many Requests" error based on the 429 status code, as shown in the following example.
+There is a limit of 300 requests in any five minute period for each originating IP address. If this limit is exceeded, the client receives a "Too Many Requests" error with the 429 status code, as shown in the following example.
 
 [source,json]
 ----
