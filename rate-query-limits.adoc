@@ -15,7 +15,7 @@ The Digital Advisor GraphQL API has limitations in place to protect against exce
 
 The GraphQL API assigns points to each query and limits the requests that you can use within a specific amount of time. This limit helps prevent abuse and denial-of-service attacks, and ensures that the API remains available for all users.
 
-There is a limit of 300 requests in any five minute period for each originating IP address. If this limit is exceeded, a client will receive the "Too Many Requests" error based on the 429 status code as shown below.
+There is a limit of 300 requests in any five minute period for each originating IP address. If this limit is exceeded, the client receives the "Too Many Requests" error based on the 429 status code, as shown in the following example.
 
 [source,json]
 ----
@@ -35,8 +35,7 @@ There is a limit of 300 requests in any five minute period for each originating 
 
 == Timeouts
 
-If GraphQL API takes more than 60 seconds to process an API request, the server terminates the request and you receive a timeout response and a message reporting that that the request has timed out.
-
+If the GraphQL API takes more than 60 seconds to process an API request, the server terminates the request and you receive a timeout response and a message reporting that that the request has timed out,  as shown in the following example.
 
 [source,json]
 ----
@@ -52,3 +51,4 @@ If GraphQL API takes more than 60 seconds to process an API request, the server 
     }
   ]
 }
+----
