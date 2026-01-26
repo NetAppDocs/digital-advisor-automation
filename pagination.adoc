@@ -11,7 +11,7 @@ summary: "Learn how to navigate data sets using cursor-based pagination with the
 [.lead]
 Learn how to navigate data sets using cursor-based pagination with the Digital Advisor GraphQL API.
 
-Digital Advisor's GraphQL API limits the number of items that you can fetch in a single request in order to protect against excessive or malicious requests to Digital Advisor's servers. When you use the GraphQL API, you must supply a `pageSize` or `after`argument on any objects. The GraphQL API returns the number of objects specified by the `pageSize` or `after` argument.
+Digital Advisor's GraphQL API limits the number of items that you can fetch in a single request in order to protect against excessive or malicious requests to Digital Advisor's servers. When you use the GraphQL API, you must supply a `pageSize` or `after` argument on any objects. The GraphQL API returns the number of objects specified by the `pageSize` or `after` argument.
 
 == Request a cursor in your query
 
