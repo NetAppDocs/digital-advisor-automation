@@ -9,7 +9,7 @@ summary: "The Digital Advisor GraphQL API has limitations in place to protect ag
 :imagesdir: ./media/
 
 [.lead]
-Learn how to browse the Digital Advisor API catalog, create an API request, and receive data from the Digital Advisor GraphQL API.
+Learn how to create a Digital Advisor GraphQL API request, and receive data from the Digital Advisor GraphQL API.
 
 == Before you begin
 
@@ -18,29 +18,10 @@ You need to complete the following before you can create a request.
 * link:authentication.html[Generate access and refresh tokens] for access to the Digital Advisor API service.
 * Open the link:https://gql.aiq.netapp.com/[GraphQL API Explorer tool^] in a separate browser window to test out the API as you perform these steps.
 
-== Step 1: Browse the Digital Advisor API catalog
-
-The Digital Advisor API catalog allows you to browse through categories and view the available APIs within each of those categories. 
 
 .Steps 
 
-. Navigate to link:https://activeiq.netapp.com[Digital Advisor (ActiveIQ)] and sign in using your NetApp Support Site credentials.
-
-. From the *Quick Links* menu, select *API Services*.
-
-. Select *Browse* under the *API Catalog* icon.
-+
-The API catalog is displayed.
-
-. Select *GraphQL* and review the documentation.
-
-== Step 2: Create a GraphQL API request 
-
-Learn how to create a request and receive data from the Digital Advisor GraphQL API.
-
-.Steps 
-
-. Open the link:https://gql.aiq.netapp.com/[GraphQL API Explorer tool^] and select the query you want to run from the left side of the window.
+. Open the link:https://gql.aiq.netapp.com/[GraphQL API Explorer tool^], and select the query you want to run from the left side of the window.
 
 . Pass your access token in the *Headers* section of the request as shown below:
 +
@@ -58,3 +39,9 @@ image:GQLExplorer.png[Graph API Explorer]
 . Submit the request by selecting *Run* in the upper right corner.
 +
 A JSON response is displayed in the *Response Window*.
+
+. Optionally, copy the curl command to run the query outside of the GraphQL API explorer.
+.. Select the image:graphql-elipsis.png[elipsis] below *Run*, then select the *Copy operation to cURL* option from the dropdown menu in the operation block.
+.. The curl command is copied to your clipboard with your query, variables, and headers pre-configured.
++
+You can now paste and run this command in your terminal.
