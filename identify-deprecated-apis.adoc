@@ -15,6 +15,12 @@ The transition from REST APIs to GraphQL APIs will be phased, with a period of o
 
 CAUTION: NetApp strongly recommends that all new API integrations utilize GraphQL-based APIs.
 
+.About this task 
+
+* You should first focus on migrating the endpoints that already have the six month deprecation notice before you migrate other endpoints. NetApp updates these first and provides confirmed GraphQL replacements.
+* To understand the schema types, review the *GraphQL → Documentation* section in the API catalog. GraphQL is organized around objects, not endpoints, which improves predictability.
+* When you create a GraphQL request, you request only the fields you need. This is one of GraphQL's key efficiency benefits. 
+
 .Steps
 
 . Review the Digital Advisor REST APIs that you are currently using in your integration.
