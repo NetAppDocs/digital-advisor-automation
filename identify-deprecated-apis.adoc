@@ -9,7 +9,7 @@ summary: "The Digital Advisor GraphQL API has limitations in place to protect ag
 :imagesdir: ./media/
 
 [.lead]
-Digital Advisor is transitioning from REST APIs to GraphQL as its primary API platform to improve performance, flexibility, and scalability. Learn how you can identify deprecated Digital Advisor REST APIs.
+Digital Advisor is transitioning from REST APIs to GraphQL as its primary API platform to improve performance, flexibility, and scalability. Learn how you can identify deprecated Digital Advisor REST APIs and migrate them to GraphQL.
 
 The transition from REST APIs to GraphQL APIs will be phased, with a period of overlap between REST APIs and GraphQL APIs. For each deprecated REST API endpoint, a deprecation notice will be published in the Digital Advisor API catalog, you need to migrate that specific endpoint to GraphQL within six months. 
 
@@ -58,7 +58,7 @@ NOTE: Digital Advisor GraphQL APIs use the same authentication methods as the RE
 * Adjust your field selection
 * Test variables
 +
-For more information, see link:create-request.html[Use the Digital Advisor GraphQL APIs]
+For more information, see link:create-request.html[Use the Digital Advisor GraphQL APIs].
 
 .After you finish
 
