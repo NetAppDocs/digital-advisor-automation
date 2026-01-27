@@ -41,17 +41,17 @@ NOTE: Most of the REST API endpoints have a direct functional replacement availa
 
 . Update your integration to GraphQL.
 +
-To replace the REST API calls with GraphQL you need to learn how to do the following:
+To replace the REST API calls with GraphQL, you need to learn how to do the following:
 
 .. Use queries instead of endpoints.
 +
 GraphQL retrieves exactly the fields you need instead of fixed REST payloads (reducing over and under fetching). For more information, see link:queries-mutations.html[Digital Advisor GraphQL API data queries and mutations].
 
-.. Pass variables instead of URL parameters
+.. Pass variables instead of URL parameters.
 +
 GraphQL uses variables instead of URL parameters. For information on how to use variables in a query, see link:queries-mutations.html#use-variables-in-a-query[Use variables in a query].
 
-.. Consolidate multiple REST API calls
+.. Consolidate multiple REST API calls.
 +
 You can use GraphQL queries to return data previously fetched from multiple REST endpoints.
 +
