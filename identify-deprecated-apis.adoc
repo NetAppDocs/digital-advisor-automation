@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
 summary: "The Digital Advisor GraphQL API has limitations in place to protect against excessive or abusive calls to Digital Advisor's servers"
 ---
-= Identify deprecated Digital Advisor REST APIs
+= Migrate deprecated Digital Advisor REST API endpoints to GraphQL
 :icons: font
 :imagesdir: ./media/
 
@@ -17,11 +17,50 @@ CAUTION: NetApp strongly recommends that all new API integrations utilize GraphQ
 
 .Steps
 
+. Review the Digital Advisor REST APIs that you are currently using in your integration.
+
 . Navigate to link:https://activeiq.netapp.com[Digital Advisor (ActiveIQ)^] and sign in using your NetApp Support Site credentials.
 
 . In the top navigation bar, select *Quick Links*, and then select *API Services*.
 
 . To review the list of APIs scheduled for deprecation, select *Browse* under the *API Catalog* icon, and then select *Deprecated APIs*.
 
+. From the list of deprecated APIs, confirm the following:
+* Whether an endpoint you are using in your integration is listed.
+* The expected retirement date for endpoints you are using.
 
+. Review the *Migration information* section which includes the equivalent GraphQL query that corresponds to each deprecated REST API endpoint.
++
+NOTE: Most of the REST API endpoints have a direct functional replacement available in GraphQL. Review each deprecated REST API endpoint to find the corresponding migration information.
+
+. Update your integration to GraphQL.
++
+To replace the REST API calls with GraphQL you need to learn how to do the following:
+
+.. Use queries instead of endpoints.
++
+GraphQL retrieves exactly the fields you need instead of fixed REST payloads (reducing over and under fetching). For more information, see link:queries-mutations.html[Digital Advisor GraphQL API data queries and mutations].
+
+.. Pass variables instead of URL parameters
++
+GraphQL uses variables instead of URL parameters. For information on how to use variables in a query, see link:queries-mutations.html#use-variables-in-a-query[Use variables in a query].
+
+.. Consolidate multiple REST API calls
++
+You can use GraphQL queries to return data previously fetched from multiple REST endpoints.
++
+NOTE: Digital Advisor GraphQL APIs use the same authentication methods as the REST API for token generation. For more information, see link:authentication.html[Generate your Digital Advisor API access and refresh tokens]. 
+
+
+. Test out the GraphQL API. You can use to the link:https://gql.aiq.netapp.com/[GraphQL API Explorer tool^] to perform the following actions:
+* Run sample queries
+* Validate output
+* Adjust your field selection
+* Test variables
++
+For more information, see link:create-request.html[Use the Digital Advisor GraphQL APIs]
+
+.After you finish
+
+After you've learned how to use the GraphQL API and validated the GraphQL version of your deprecated endpoint, update your automation code and scripts and discontinue the use of the deprecated REST call before its retirement date.
 

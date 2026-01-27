@@ -9,9 +9,9 @@ summary: "The Digital Advisor GraphQL API has limitations in place to protect ag
 :imagesdir: ./media/
 
 [.lead]
-Learn how to create a Digital Advisor GraphQL API request, and receive data from the Digital Advisor GraphQL API.
+Learn how to create a Digital Advisor GraphQL API request to receive data from the Digital Advisor GraphQL API.
 
-== Before you begin
+.Before you begin
 
 You need to complete the following before you can create a request.
 
@@ -41,7 +41,9 @@ image:GQLExplorer.png[Graph API Explorer]
 A JSON response is displayed in the *Response Window*.
 
 . Optionally, copy the curl command to run the query outside of the GraphQL API explorer.
-.. Select the image:graphql-elipsis.png[elipsis] below *Run*, then select the *Copy operation to cURL* option from the dropdown menu in the operation block.
+.. Select the *(...)* below *Run*, then select the *Copy operation to cURL* option from the dropdown menu in the operation block:
++
+image:graphql-copy-curl.png[shows how to copy the curl command]
 .. The curl command is copied to your clipboard with your query, variables, and headers pre-configured.
 +
 You can now paste and run this command in your terminal.
