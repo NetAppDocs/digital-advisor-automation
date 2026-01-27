@@ -52,7 +52,7 @@ You can use GraphQL queries to return data previously fetched from multiple REST
 NOTE: Digital Advisor GraphQL APIs use the same authentication methods as the REST API for token generation. For more information, see link:authentication.html[Generate your Digital Advisor API access and refresh tokens]. 
 
 
-. Test out the GraphQL API. You can use to the link:https://gql.aiq.netapp.com/[GraphQL API Explorer tool^] to perform the following actions:
+. Test out the GraphQL API. You can use the link:https://gql.aiq.netapp.com/[GraphQL API Explorer tool^] to perform the following actions:
 * Run sample queries
 * Validate output
 * Adjust your field selection
