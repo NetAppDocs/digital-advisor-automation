@@ -14,18 +14,18 @@ sidebar:
     url: /index.html
   - title: Get started
     entries: 
-    - title: Learn about Digital Advisor APIs
+    - title: Learn about Digital Advisor GraphQL APIs
       url: /learn-about.html
-    - title: Queries and mutations
+    - title: GraphQL queries and mutations
       url: /queries-mutations.html
-    - title: Pagination
+    - title: GraphQL pagination
       url: /pagination.html
-    - title: Rate and query limits
+    - title: GraphQL rate and query limits
       url: /rate-query-limits.html
-    - title: Error handling
+    - title: GraphQL error handling
       url: /error-handling.html
 
-  - title: Use the Digital Advisor APIs
+  - title: Use the Digital Advisor GraphQL API
     entries: 
     - title: Generate access and refresh tokens
       url: /authentication.html
@@ -33,8 +33,10 @@ sidebar:
       url: /create-request.html
     - title: Use example queries
       url: /sample-api-queries.html
-  - title: Migrate from REST to the GraphQL API
+  - title: Digital Advisor REST APIs (deprecated)
     entries:
+    - title: Access the Digital Advisor REST APIs 
+      url: /access-rest-api.html
     - title: Migrate deprecated Digital Advisor REST API endpoints
       url: /identify-deprecated-apis.html
   - title: Legal notices
