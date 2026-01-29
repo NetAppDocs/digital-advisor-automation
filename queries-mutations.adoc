@@ -15,14 +15,23 @@ The two types of allowed operations in Digital Advisor's GraphQL API are queries
 
 == Queries
 
-GraphQL queries return only the data you specify. Comparing GraphQL to REST, queries operate like GET requests.  To create a query, you must specify nested subfields until you return only scalar values.
+GraphQL queries return only the data you specify. Comparing GraphQL to REST, queries operate like GET requests.  To create a query, you must specify nested subfields until you return only scalar values. The following example query shows how to get system details by including the system object and nested fields to return scalar values for the `serialNumber` and `systemId`.
 
-.Example query structure:
+NOTE: Queries that do not specify nested subfields are invalid.
+
+.Example query:
 
 [source,graphql]
 ----
-query {
-  JSON-OBJECT-TO-RETURN
+query getSystems {
+  systems {
+    cursor
+    totalCount
+    systems {
+      serialNumber
+      systemId
+    }
+  }
 }
 ----
 

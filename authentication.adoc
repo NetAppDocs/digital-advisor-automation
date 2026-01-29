@@ -66,7 +66,7 @@ curl -X POST https://gql.aiq.netapp.com/graphql \
 
 Your refresh token is valid for 7 days and you must use it to refresh within that timeframe. When you refresh with the API, you receive a new refresh token. You must save the new token and use it the next time you need to refresh your tokens.
 
-NOTE: You can repeat this process (refreshing and saving the new token) for *90 days* from your original login date. You *must* log in interactively after 90 days and get a new set of tokens.
+NOTE: You can repeat this process (refreshing and saving the new token) for *90 days* from your original login date. You *must* log in after 90 days and repeat the steps to get a new set of tokens.
 
 The following curl example shows how to refresh your tokens:
 
