@@ -18,7 +18,7 @@ CAUTION: NetApp strongly recommends that all new API integrations utilize GraphQ
 .About this task 
 
 * You should first focus on migrating the endpoints that already have the six month deprecation notice before you migrate other endpoints. NetApp updates these first and provides confirmed GraphQL replacements.
-* To understand the schema types, review the *GraphQL → Documentation* section in the API catalog. GraphQL is organized around objects, not endpoints, which improves predictability.
+* GraphQL is organized around objects, not endpoints, which improves predictability. To understand the schema types, refer to the link:https://studio.apollographql.com/public/ActiveIQ-Graph-Prd-API/variant/current/explorer[GraphQL Apollo Studio explorer^].
 * When you create a GraphQL request, you request only the fields you need. This is one of GraphQL's key efficiency benefits. 
 
 .Steps
@@ -53,7 +53,7 @@ GraphQL uses variables instead of URL parameters. For information on how to use 
 
 .. Consolidate multiple REST API calls.
 +
-You can use GraphQL queries to return data previously fetched from multiple REST endpoints.
+With GraphQL, you can combine several requests into a single query and get all the data you need at once.
 +
 NOTE: Digital Advisor GraphQL APIs use the same authentication methods as the REST API for token generation. For more information, see link:authentication.html[Generate your Digital Advisor API access and refresh tokens]. 
 
