@@ -29,7 +29,7 @@ sidebar:
     entries: 
     - title: Generate access and refresh tokens
       url: /authentication.html
-    - title: Use the Digital Advisor GraphQL APIs
+    - title: Create a request
       url: /create-request.html
     - title: Use example GraphQL queries
       url: /sample-api-queries.html
