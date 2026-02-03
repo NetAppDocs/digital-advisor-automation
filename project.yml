@@ -35,7 +35,7 @@ sidebar:
       url: /sample-api-queries.html
   - title: Migrate from REST to GraphQL
     entries:
-    - title: Migrate deprecated REST API endpoints
+    - title: Migrate Digital Advisor REST API endpoints
       url: /identify-deprecated-apis.html
   - title: Legal notices
     url: /legal-notices.html
