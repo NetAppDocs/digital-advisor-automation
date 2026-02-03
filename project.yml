@@ -16,13 +16,13 @@ sidebar:
     entries: 
     - title: Learn about Digital Advisor GraphQL APIs
       url: /learn-about.html
-    - title: GraphQL queries and mutations
+    - title: Queries and mutations
       url: /queries-mutations.html
-    - title: GraphQL pagination
+    - title: Pagination
       url: /pagination.html
-    - title: GraphQL rate and query limits
+    - title: Rate and query limits
       url: /rate-query-limits.html
-    - title: GraphQL error handling
+    - title: Error handling
       url: /error-handling.html
 
   - title: Use the Digital Advisor GraphQL API
