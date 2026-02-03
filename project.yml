@@ -33,10 +33,8 @@ sidebar:
       url: /create-request.html
     - title: Use example queries
       url: /sample-api-queries.html
-  - title: Digital Advisor REST APIs (deprecated)
+  - title: Migrate from REST API to GraphQL
     entries:
-    - title: Access the Digital Advisor REST APIs 
-      url: /access-rest-api.html
     - title: Migrate deprecated Digital Advisor REST API endpoints
       url: /identify-deprecated-apis.html
   - title: Legal notices
