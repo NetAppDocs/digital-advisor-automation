@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
 summary: "The Digital Advisor GraphQL API has limitations in place to protect against excessive or abusive calls to Digital Advisor's servers"
 ---
-= Use the Digital Advisor GraphQL APIs
+= Create a Digital Advisor GraphQL API request
 :icons: font
 :imagesdir: ./media/
 
