@@ -31,7 +31,7 @@ sidebar:
       url: /authentication.html
     - title: Use the Digital Advisor GraphQL APIs
       url: /create-request.html
-    - title: Use example queries
+    - title: Use example GraphQL queries
       url: /sample-api-queries.html
   - title: Migrate from REST API to GraphQL
     entries:
