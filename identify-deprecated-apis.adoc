@@ -11,7 +11,7 @@ summary: "The Digital Advisor GraphQL API has limitations in place to protect ag
 [.lead]
 Digital Advisor is transitioning from REST APIs to GraphQL as its primary API platform to improve performance, flexibility, and scalability. Learn how you can identify deprecated Digital Advisor REST APIs and migrate them to GraphQL.
 
-The transition from REST APIs to GraphQL APIs will be phased, with a period of overlap between REST APIs and GraphQL APIs. A deprecation notice will be published in the Digital Advisor API catalog for each deprecated REST API. You need to migrate that specific endpoint to GraphQL within six months. 
+The transition from REST APIs to GraphQL APIs will be phased, with a period of overlap between REST APIs and GraphQL APIs. A deprecation notice will be published in the Digital Advisor API catalog for each deprecated REST API endpoint. You need to migrate that specific endpoint to GraphQL within six months. 
 
 CAUTION: NetApp strongly recommends that all new API integrations utilize GraphQL-based APIs.
 
