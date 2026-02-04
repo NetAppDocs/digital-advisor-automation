@@ -9,7 +9,7 @@ summary: "Describes new features, upgrade notes, fixed issues, known limitations
 :imagesdir: ./media/
 
 [.lead]
-NetApp Digital Advisor uses automation and AI to analyze telemetry and product data. It provides predictive analytics for NetApp environments through API access to telemetry-driven insights and install base details. You can integrate these analytics into your workflows, dashboards, and fleet management systems.
+NetApp Digital Advisor uses automation and artificial intelligence to analyze telemetry and product data. It provides predictive analytics for NetApp environments through API access to telemetry-driven insights and install base details. You can integrate these analytics into your workflows, dashboards, and fleet management systems.
 
 
 == Supported API platforms
