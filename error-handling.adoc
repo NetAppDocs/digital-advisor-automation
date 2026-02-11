@@ -61,7 +61,7 @@ In addition to the built-in error codes, the following table shows some addition
 | 429
 | Request rate limit exceeded
 
-| -
+| Not applicable
 | 403
 | Request body size more than 8KB
 |===
