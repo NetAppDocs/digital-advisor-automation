@@ -2,7 +2,7 @@
 permalink: sample-api-queries.html
 sidebar: sidebar
 keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
-summary: "The Digital Advisor GraphQL API has limitations in place to protect against excessive or abusive calls to Digital Advisor's servers"
+summary: "Example GraphQL queries for common Digital Advisor API use cases"
 ---
 = Use Digital Advisor GraphQL API example queries
 :icons: font
