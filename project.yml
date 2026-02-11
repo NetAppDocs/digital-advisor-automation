@@ -39,7 +39,7 @@ sidebar:
       url: /learn-about-migration.html
     - title: Migrate REST API endpoints to GraphQL
       url: /migrate-to-graphql.html
-    - title: Update API calls
+    - title: Update deprecated REST API calls
       url: /identify-deprecated-apis.html
   - title: Legal notices
     url: /legal-notices.html
