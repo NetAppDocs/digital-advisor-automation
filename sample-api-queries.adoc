@@ -24,10 +24,15 @@ For more example GraphQL queries, refer to the link:https://studio.apollographql
 
 == Fleet-wide inventory management
 
+Learn how to use the example GraphQL queries for fleet-wide inventory management. 
+
 === Retrieve a list of sites
 
 You can use this query to fetch a list of site IDs that are to be used in subsequent queries.
 
+.Show example
+[%collapsible]
+====
 [source,graphql]
 ----
 query($customerId: String, $after: String) {
@@ -40,11 +45,15 @@ query($customerId: String, $after: String) {
   }
 }
 ----
+====
 
 === Retrieve a list of customers 
 
 You can use this query to fetch a list of customer IDs that are to be used in subsequent queries.
 
+.Show example
+[%collapsible]
+====
 [source,graphql]
 ----
 query($customerId: String, $after: String) {
@@ -56,11 +65,15 @@ query($customerId: String, $after: String) {
   }
 }
 ----
+====
 
 === Track all purchased systems
 
 You can use this query to identify which systems are sending telemetry data. This automatically detects gaps in telemetry and for automatic case generation.
 
+.Show example
+[%collapsible]
+====
 [source,graphql]
 ----
 query($customerId: String, $after: String) {
@@ -89,11 +102,15 @@ query($customerId: String, $after: String) {
   }
 }
 ----
+====
 
 === View sites and contacts 
 
 You can use this query to understand where systems are deployed and who the key contacts are for each location.
 
+.Show example
+[%collapsible]
+====
 [source,graphql]
 ----
 query($customerId: String, $after: String) {
@@ -138,11 +155,15 @@ query($customerId: String, $after: String) {
   }
 }
 ----
+====
 
 === Access the latest configuration details of the system
 
 You can use this query to access the latest configuration details of the system based on its last check-in. This includes a wide range of available attributes including software versions.
 
+.Show example
+[%collapsible]
+====
 [source,graphql]
 ----
 query($customerId: String, $after: String) {
@@ -170,11 +191,15 @@ query($customerId: String, $after: String) {
   }
 }
 ----
+====
 
 === Analyze current and forecasted capacity and storage efficiency 
 
 You can use this query to analyze the current and forecasted capacity and storage efficiency for ONTAP, E-Series, and StorageGRID systems.
 
+.Show example
+[%collapsible]
+====
 [source,graphql]
 ----
 query($customerId: String, $after: String) {
@@ -248,11 +273,15 @@ query($customerId: String, $after: String) {
   }
 }
 ----
+====
 
 === Discover end-of-support dates for systems, shelves, and disks 
 
 You can use this query to proactively plan for future tech refreshes by discovering the end-of-support dates for systems, shelves, and disks.
 
+.Show example
+[%collapsible]
+====
 [source,graphql]
 ----
 query($customerId: String, $after: String) {
@@ -300,11 +329,15 @@ query($customerId: String, $after: String) {
   }
 }
 ----
+====
 
 === Monitor policy variations (PVRs) 
 
 You can use this query to monitor policy variations (PVRs) for your systems along with their expiration dates.
 
+.Show example
+[%collapsible]
+====
 [source,graphql]
 ----
 query($customerId: String, $after: String) {
@@ -325,11 +358,15 @@ query($customerId: String, $after: String) {
   }
 }
 ----
+====
 
 === Review contract details
 
 You can use this query to view contract details, including hardware and software contract dates and identifiers.
 
+.Show example
+[%collapsible]
+====
 [source,graphql]
 ----
 query($customerId: String, $after: String) {
@@ -361,11 +398,15 @@ query($customerId: String, $after: String) {
   }
 }
 ----
+====
 
-== Support Case Management
+== Support case management
 
 You can use this query to determine which assets have open support cases and their current status.
 
+.Show example
+[%collapsible]
+====
 [source,graphql]
 ----
 query($customerId: String, $after: String) {
@@ -402,13 +443,19 @@ query($customerId: String, $after: String) {
   }
 }
 ----
+====
 
-== Risk Management
+== Risk management
+
+Learn how to use the example GraphQL queries for risk management.
 
 === Discover and monitor risk
 
 You can use this query to discover and monitor security, upgrade, best practice, configuration, community, and AI issues.
 
+.Show example
+[%collapsible]
+====
 [source,graphql]
 ----
 query($customerId: String, $after: String) {
@@ -458,11 +505,15 @@ query($customerId: String, $after: String) {
   }
 }
 ----
+====
 
 === Receive recommendations 
 
 You can use this query to receive actionable recommendations to prevent issues before they occur.
 
+.Show example
+[%collapsible]
+====
 [source,graphql]
 ----
 query($customerId: String, $after: String) {
@@ -500,11 +551,15 @@ query($customerId: String, $after: String) {
   }
 }
 ----
+====
 
 == Sustainability and energy management
 
 You can use this query to monitor actual and published power consumption, as well as projected power, heat, and carbon metrics.
 
+.Show example
+[%collapsible]
+====
 [source,graphql]
 ----
 query($siteId: String) {
@@ -541,13 +596,19 @@ query($siteId: String) {
   }
 }
 ----
+==== 
 
 == Upgrade recommendations and history
+
+Learn how to use the example GraphQL queries for upgrade recommendations and history.
 
 === Track recommendations and history
 
 You can use this query to track upgrade recommendations and history, including which systems were upgraded, when, and to which versions.
 
+.Show example
+[%collapsible]
+====
 [source,graphql]
 ----
 query($customerId: String, $after: String) {
@@ -566,11 +627,15 @@ query($customerId: String, $after: String) {
   }
 }
 ----
+====
 
 === Retrieve recommendations
 
 You can use this query to retrieve recommendations on where to upgrade next and readiness for the upgrade across your fleet.
 
+.Show example
+[%collapsible]
+====
 [source,graphql]
 ----
 query($customerId: String, $after: String) {
@@ -596,4 +661,4 @@ query($customerId: String, $after: String) {
   }
 }
 ----
-
+====
