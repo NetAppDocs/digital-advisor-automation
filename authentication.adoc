@@ -36,7 +36,7 @@ You need to generate an access token and a refresh token before you can use the 
 . In the top navigation bar, select *Quick Links*, and then select *API Services*.
 
 . Select *Register for API access*, and then select *Register*.
-.. Complete the request for the authorization form, and the select *Submit*.
+.. Complete the request for the authorization form, and then select *Submit*.
 +
 NOTE: Activation is automatic and should be instantaneous. After you are authorized to use the Digital Advisor APIs, you can generate tokens to use when making programmatic API calls. Tokens always come in sets of two: an access token and a refresh token. The access token must be passed to successfully use all APIs (except for one) and the refresh token is used to programmatically obtain a new set of tokens.
 +
