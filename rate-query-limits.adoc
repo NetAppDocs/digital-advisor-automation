@@ -35,7 +35,7 @@ There is a limit of 300 requests in any five minute period for each originating 
 
 == Timeouts
 
-If the GraphQL API takes more than 60 seconds to process an API request, the server terminates the request and you receive a timeout response and a message reporting that the request has timed out, as shown in the following example.
+If the GraphQL API takes more than 60 seconds to process an API request, the server terminates the request. You receive a timeout response and a message reporting that the request has timed out, as shown in the following example.
 
 [source,json]
 ----
