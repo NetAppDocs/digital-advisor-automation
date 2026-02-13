@@ -13,6 +13,8 @@ You need to understand the elements of the GraphQL API to update deprecated REST
 
 CAUTION: NetApp strongly recommends that all new API integrations utilize GraphQL-based APIs.
 
+== Understand how to replace REST API calls with GraphQL
+
 To replace the REST API calls with GraphQL, you need to learn how to do the following:
 
 * Use queries instead of endpoints.
