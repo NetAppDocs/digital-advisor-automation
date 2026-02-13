@@ -5,6 +5,8 @@ keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, cal
 summary: "Authenticate using user access tokens to start using the Digital Advisor APIs"
 ---
 = Generate your Digital Advisor API access and refresh tokens
+:icons: font
+:imagesdir: ./media/
 
 [.lead]
 Learn how to generate and refresh the required tokens before using the Digital Advisor APIs. The tokens ensure that only authorized persons and systems can access your NetApp information.
@@ -36,7 +38,7 @@ You need to generate an access token and a refresh token before you can use the 
 . In the top navigation bar, select *Quick Links*, and then select *API Services*.
 
 . Select *Register for API access*, and then select *Register*.
-.. Complete the request for the authorization form, and the select *Submit*.
+.. Complete the request for the authorization form, and then select *Submit*.
 +
 NOTE: Activation is automatic and should be instantaneous. After you are authorized to use the Digital Advisor APIs, you can generate tokens to use when making programmatic API calls. Tokens always come in sets of two: an access token and a refresh token. The access token must be passed to successfully use all APIs (except for one) and the refresh token is used to programmatically obtain a new set of tokens.
 +

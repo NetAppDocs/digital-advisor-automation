@@ -1,7 +1,7 @@
 indexpage:
   title: NetApp Digital Advisor documentation
-  lead: NetApp Digital Advisor leverages programmatic and artificial intelligence to analyze telemetry and product data. This provides proactive care and optimization for your data infrastructure and delivers actionable predictive analytics for NetApp environments through API access to telemetry-driven insights and install-base details. Digital Advisor APIs enable integration of these analytics into organizational workflows, dashboards, and fleet management systems.
-  summary: NetApp Digital Advisor leverages programmatic and artificial intelligence to analyze telemetry and product data. This provides proactive care and optimization for your data infrastructure and delivers actionable predictive analytics for NetApp environments through API access to telemetry-driven insights and install-base details. Digital Advisor APIs enable integration of these analytics into organizational workflows, dashboards, and fleet management systems.
+  lead: NetApp Digital Advisor uses automation and artificial intelligence to analyze telemetry and product data. It provides predictive analytics for NetApp environments through API access to telemetry-driven insights and install base details. You can integrate these analytics into your workflows, dashboards, and fleet management systems.
+  summary: NetApp Digital Advisor uses automation and artificial intelligence to analyze telemetry and product data. It provides predictive analytics for NetApp environments through API access to telemetry-driven insights and install base details. You can integrate these analytics into your workflows, dashboards, and fleet management systems.
   keywords: netapp digital advisor documentation active iq
   tiles: 
     - title: Get started

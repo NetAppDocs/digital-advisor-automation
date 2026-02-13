@@ -2,7 +2,7 @@
 permalink: create-request.html
 sidebar: sidebar
 keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
-summary: "The Digital Advisor GraphQL API has limitations in place to protect against excessive or abusive calls to Digital Advisor's servers"
+summary: "Learn how to create and submit GraphQL API requests to the Digital Advisor API"
 ---
 = Create a Digital Advisor GraphQL API request
 :icons: font
@@ -41,9 +41,9 @@ image:GQLExplorer.png[Graph API Explorer]
 A JSON response is displayed in the *Response Window*.
 
 . Optionally, copy the curl command to run the query outside of the GraphQL API explorer.
-.. Select the *(...)* below *Run*, then select the *Copy operation to cURL* option from the dropdown menu in the operation block:
+.. On the right side of the operation block window, select *(...)*, and then select the *Copy operation to cURL* option from the dropdown menu:
 +
 image:graphql-copy-curl.png[shows how to copy the curl command]
-.. The curl command is copied to your clipboard with your query, variables, and headers pre-configured.
+.. The curl command is copied to your clipboard with your pre-configured query, variables, and headers.
 +
 You can now paste and run this command in your terminal.

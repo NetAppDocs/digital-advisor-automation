@@ -11,11 +11,11 @@ summary: "Describes new features, upgrade notes, fixed issues, known limitations
 [.lead]
 The Digital Advisor GraphQL API offers flexibility and the ability to define precisely the data you want to fetch.
 
-The two types of allowed operations in Digital Advisor's GraphQL API are queries and mutations. Queries and mutations share similar attributes, with some important differences.
+The two types of allowed operations in Digital Advisor's GraphQL API are queries and mutations. Queries and mutations share similar features, with some important differences.
 
 == Queries
 
-GraphQL queries return only the data you specify. Comparing GraphQL to REST, queries operate like GET requests.  To create a query, you must specify nested subfields until you return only scalar values. The following example query shows how to get system details by including the system object and nested fields to return scalar values for the `serialNumber` and `systemId`.
+GraphQL queries return only the data you specify. In GraphQL, queries work like REST GET requests.  To create a query, you must specify nested subfields until you return only scalar values. The following example query shows how to get system details by including the system object and nested fields to return scalar values for the `serialNumber` and `systemId`.
 
 NOTE: Queries that do not specify nested subfields are invalid.
 
@@ -37,11 +37,11 @@ query getSystems {
 
 == Mutations
 
-Comparing GraphQL to REST, mutations operate like POST, PATCH, and DELETE requests. The mutation name determines which modification is executed. To create a mutation, you must specify:
+In GraphQL, mutations work like POST, PATCH, and DELETE requests in REST APIs. The mutation name determines which modification is run. To create a mutation, you must specify:
 
 * The mutation name. This is the type of modification you want to perform.
-* The input object. This is the data you want to send to the server, composed of input fields. This is passed as an argument to the mutation name.
-* The payload object. The data you want to return from the server, composed of return fields. This is passed as the body of the mutation name.
+* The input object. This is the data you want to send to the server, composed of input fields. You pass this as an argument to the mutation name.
+* The payload object. The data you want to return from the server, composed of return fields. You pass this as the body of the mutation name.
 
 .Mutation structure example:
 
@@ -94,7 +94,7 @@ There are three steps required to use variables in your queries.
 }
 ----
 +
-The object must be a valid JSON object. This example shows a simple string variable type, but it's possible to define more complex variable types, such as input objects. You can also define multiple variables here.
+The object must be a valid JSON object.This example uses a string variable. You can also define complex types, such as input objects, or multiple variables.
 
 . Pass the variable to the operation as an argument:
 +
@@ -112,9 +112,9 @@ The argument is a key-value pair, where the key is the name starting with $ (suc
 system(customerId: $customerId) {
 ----
 +
-In this example, you substitute the variable for the customer ID you want to retrieve. You specified a type in step 2 because GraphQL enforces strong typing.
+In this example, you use the variable for the customer ID you want to retrieve. You specified a type in step 2 because GraphQL enforces strong typing.
 
-This process makes the query argument dynamic. You can simply change the value in the variables object and keep the rest of the query the same. Using variables as arguments lets you dynamically update values in the variables object without changing the query.
+This process makes the query argument dynamic. You can simply change the value in the variables object and keep the rest of the query the same. Variables let you update values without changing the query.
 
 == Example query
 
