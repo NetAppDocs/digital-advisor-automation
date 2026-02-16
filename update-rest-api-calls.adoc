@@ -23,7 +23,7 @@ GraphQL retrieves exactly the fields you need instead of fixed REST payloads (re
 
 * Pass variables instead of URL parameters.
 +
-GraphQL uses variables instead of URL parameters. For information on how to use variables in a query, see link:queries-mutations.html#use-variables-in-a-query[Use variables in a query].
+GraphQL uses variables instead of URL parameters. For more information, see link:queries-mutations.html#use-variables-in-a-query[Use variables in a query].
 
 * Consolidate multiple REST API calls.
 +
