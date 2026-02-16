@@ -9,7 +9,7 @@ summary: "The Digital Advisor GraphQL API has limitations in place to protect ag
 :imagesdir: ./media/
 
 [.lead]
-You need to understand the elements of the GraphQL API to update deprecated REST API calls to GraphQL. 
+You need to understand the elements of the GraphQL API in order to update your deprecated REST API calls to GraphQL. 
 
 CAUTION: NetApp strongly recommends that all new API integrations utilize GraphQL-based APIs.
 
