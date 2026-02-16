@@ -29,7 +29,7 @@ The link:https://graphql.org[GraphQL^] data query language has the following ben
 * Hierarchical fields. The shape of a GraphQL call mirrors the shape of the JSON data it returns. Nested fields let you query for and receive only the data you specify in a single round trip.
 * An application layer. GraphQL is not a storage model or a database query language. The graph refers to graph structures defined in the schema, where nodes define objects and edges define relationships between objects. The API traverses and returns data based on the schema definitions, independent of how the data is stored.
 
-== Data object relationships
+== Benefits of GraphQL data object relationships
 
 GraphQL is organized around objects, not endpoints, which improves predictability.
 
