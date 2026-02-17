@@ -58,7 +58,7 @@ All of the data listed above can be integrated through API-first workflows into 
 
 == Learn about the GraphQL API data query language
 
-GraphQL is an open source query language that allows clients to request exactly the data they need. The link:https://graphql.org[GraphQL^] data query language has the following attributes:
+link:https://graphql.org[GraphQL^] is an open source data query language that allows clients to request exactly the data they need. The GraphQL data query language has the following attributes:
 
 * A link:https://spec.graphql.org/September2025/[specification]. The specification determines the validity of the schema on the API server. The schema determines the validity of client calls.
 * A strongly typed schema. The schema defines an API's type system and all object relationships.
