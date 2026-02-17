@@ -21,9 +21,9 @@ The transition will be phased, with a period of overlap between REST APIs and Gr
 
 == Benefits of GraphQL's data query language
 
-The GraphQL data query language allows client to request exactly the data they need. The link:https://graphql.org[GraphQL^] data query language has the following benefits:
+The link:https://graphql.org[GraphQL^] data query language allows clients to request exactly the data they need. The benefits of using the GraphQL data query language include:
 
-* A link:https://spec.graphql.org/September2025/[specification]. The specification determines the validity of the schema on the API server. The schema determines the validity of client calls.
+* A link:https://spec.graphql.org/September2025/[specification^]. The specification determines the validity of the schema on the API server. The schema determines the validity of client calls.
 * A strongly typed schema. The schema defines an API's type system and all object relationships.
 * An introspective schema. A client can query the schema for details about the schema.
 * Hierarchical fields. The shape of a GraphQL call mirrors the shape of the JSON data it returns. Nested fields let you query for and receive only the data you specify in a single round trip.
@@ -38,3 +38,7 @@ Compared to REST, GraphQL is organized around objects, not endpoints, which impr
 * Single endpoint simplicity: Accesses all Digital Advisor intelligence from a unified GraphQL endpoint.
 * Improved efficiency: Reduces the number of API calls in dashboards and automation pipelines.
 * Future-proof flexibility: Seamlessly adopts new insights with zero disruption as GraphQL schemas evolve.
+
+== Comparing GraphQL and REST API operations
+
+GraphQL uses two types of operations; queries and mutations.  In GraphQL, queries operate like GET requests and mutations operate like POST, PATCH, and DELETE requests in REST. To learn more about queries and mutations, refer to link:queries-mutations.html[Digital Advisor GraphQL API data queries and mutations].
