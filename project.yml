@@ -14,7 +14,7 @@ sidebar:
     url: /index.html
   - title: Get started
     entries: 
-    - title: Learn about Digital Advisor GraphQL APIs
+    - title: Learn about Digital Advisor APIs
       url: /learn-about.html
     - title: Queries and mutations
       url: /queries-mutations.html
