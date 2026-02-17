@@ -21,7 +21,7 @@ The transition will be phased, with a period of overlap between REST APIs and Gr
 
 == Benefits of GraphQL's data query language
 
-The link:https://graphql.org[GraphQL^] data query language has the following benefits:
+The GraphQL data query language allows client to request exactly the data they need. The link:https://graphql.org[GraphQL^] data query language has the following benefits:
 
 * A link:https://spec.graphql.org/September2025/[specification]. The specification determines the validity of the schema on the API server. The schema determines the validity of client calls.
 * A strongly typed schema. The schema defines an API's type system and all object relationships.
@@ -31,7 +31,7 @@ The link:https://graphql.org[GraphQL^] data query language has the following ben
 
 == Benefits of GraphQL data object relationships
 
-GraphQL is organized around objects, not endpoints, which improves predictability.
+Compared to REST, GraphQL is organized around objects, not endpoints, which improves predictability and provides the following benefits:
 
 * Tailored data retrieval: Queries only the required fields, keeping responses concise and relevant. When you create a GraphQL request, you request only the fields you need. This is one of GraphQL's key efficiency benefits.
 

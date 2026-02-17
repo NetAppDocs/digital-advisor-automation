@@ -56,9 +56,9 @@ You can use the Digital Advisor APIs to perform the following tasks across your 
 
 All of the data listed above can be integrated through API-first workflows into your in-house tools and processes to help make managing your NetApp fleet easier.
 
-== Understand the Digital Advisor GraphQL API data query language
+== Learn about the GraphQL API data query language
 
-The link:https://graphql.org[GraphQL^] data query language has the following attributes:
+GraphQL is an open source query language that allows clients to request exactly the data they need. The link:https://graphql.org[GraphQL^] data query language has the following attributes:
 
 * A link:https://spec.graphql.org/September2025/[specification]. The specification determines the validity of the schema on the API server. The schema determines the validity of client calls.
 * A strongly typed schema. The schema defines an API's type system and all object relationships.
@@ -66,7 +66,7 @@ The link:https://graphql.org[GraphQL^] data query language has the following att
 * Hierarchical fields. The shape of a GraphQL call mirrors the shape of the JSON data it returns. Nested fields let you query for and receive only the data you specify in a single round trip.
 * An application layer. GraphQL is not a storage model or a database query language. The graph refers to graph structures defined in the schema, where nodes define objects and edges define relationships between objects. The API traverses and returns data based on the schema definitions, independent of how the data is stored.
 
-== Data object relationships
+== Data object relationships in GraphQL
 
 Learn about the GraphQL API schema to understand how data objects relate and exist within a hierarchy. The schema has the following elements:
 
