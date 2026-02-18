@@ -631,7 +631,7 @@ query($customerId: String, $after: String) {
 
 === Retrieve upgrade recommendations
 
-You can use this query to retrieve recommendations on your next upgrade and whether your systems are ready for upgrade.
+You can use this query to retrieve recommendations on your next upgrade and readiness for upgrade across your NetApp inventory.
 
 .Show example
 [%collapsible]

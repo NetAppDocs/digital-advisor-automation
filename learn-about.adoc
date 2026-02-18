@@ -52,7 +52,7 @@ You can use the Digital Advisor APIs to perform the following tasks across your 
   ** Monitor actual and published power consumption, as well as projected power, heat, and carbon metrics.
 * Upgrade recommendations and history:
   ** Track upgrade recommendations and history, including which systems were upgraded, when, and to what versions.
-  ** Retrieve recommendations on the next upgrade and whether your systems are ready for upgrade.
+  ** Retrieve recommendations on the next upgrade and readiness for upgrade across your NetApp inventory.
 
 All of the data listed can be integrated through API-first workflows into your in-house tools and processes to help make managing your NetApp inventory easier.
 
