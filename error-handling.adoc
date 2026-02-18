@@ -61,11 +61,9 @@ In addition to the built-in error codes, the following table shows some addition
 | 429
 | Request rate limit exceeded
 
-| Not applicable
-| 403
-| Request body size more than 8KB
 |===
 
+NOTE: GraphQL returns the HTTP status code of `200` as long as the HTTP request is valid and succeeds. Any execution errors are returned inside the JSON response body with their error codes. For more information, refer to link:https://www.apollographql.com/docs/apollo-server/data/errors#setting-http-status-code-and-headers[Apollo Server documentation^].
 
 
 == Example error responses

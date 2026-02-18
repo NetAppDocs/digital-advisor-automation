@@ -331,9 +331,9 @@ query($customerId: String, $after: String) {
 ----
 ====
 
-=== Monitor policy variations (PVRs) 
+=== Monitor policy variance requests (PVRs) 
 
-You can use this query to monitor policy variations (PVRs) for your systems along with their expiration dates.
+You can use this query to monitor policy variance requests (PVRs) for your systems along with their expiration dates.
 
 .Show example
 [%collapsible]

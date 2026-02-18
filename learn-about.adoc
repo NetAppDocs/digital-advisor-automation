@@ -20,7 +20,7 @@ The transition will be phased, with a period of overlap between REST APIs and Gr
 
 To identify the REST APIs scheduled for deprecation from the Digital Advisor API catalog, navigate to *API services* > *Browse* > *Deprecated APIs*.
 
-CAUTION: NetApp strongly recommends that all new API integrations use  GraphQL-based APIs.
+CAUTION: Due to the phased deprecation of Digital Advisor REST APIs, NetApp strongly recommends that all new API integrations use the GraphQL-based API.
 
 == AutoSupport
 
