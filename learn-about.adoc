@@ -9,7 +9,7 @@ summary: "Describes new features, upgrade notes, fixed issues, known limitations
 :imagesdir: ./media/
 
 [.lead]
-NetApp Digital Advisor uses automation and artificial intelligence to analyze telemetry and product data. It provides predictive analytics for NetApp environments through API access to telemetry-driven insights and install base details. You can integrate these analytics into your workflows, dashboards, and fleet management systems.
+NetApp Digital Advisor uses automation and artificial intelligence to analyze telemetry and product data. It provides predictive analytics for NetApp environments through API access to telemetry-driven insights and install base details. You can integrate these analytics into your workflows, dashboards, and NetApp management systems.
 
 
 == Supported API platforms
@@ -20,7 +20,7 @@ The transition will be phased, with a period of overlap between REST APIs and Gr
 
 To identify the REST APIs scheduled for deprecation from the Digital Advisor API catalog, navigate to *API services* > *Browse* > *Deprecated APIs*.
 
-CAUTION: NetApp strongly recommends that all new API integrations use  GraphQL-based APIs.
+CAUTION: Due to the phased deprecation of Digital Advisor REST APIs, NetApp strongly recommends that all new API integrations use the GraphQL-based API.
 
 == AutoSupport
 
@@ -30,17 +30,17 @@ AutoSupport data is system-generated and enabled by default on ONTAP and most ot
 
 == Benefits of using Digital Advisor APIs
 
-Digital Advisor brings together business and support system data with configuration and AI-derived insights from AutoSupport telemetry. Instead of siloed views or manual downloads, you can gain programmatic, fleet-wide visibility, enabling faster action and smarter decisions.
+Digital Advisor brings together business and support system data with configuration and AI-derived insights from AutoSupport telemetry. Instead of siloed views or manual downloads, you can gain programmatic visibility across your NetApp data infrastructure, enabling faster action and smarter decisions.
 
 You can use the Digital Advisor APIs to perform the following tasks across your NetApp environment:
 
-* Fleet-wide inventory management:
+* NetApp inventory management:
   ** Track all purchased systems to identify which are sending telemetry data and which are not. Automatically detect gaps in telemetry and for automatic case generation.
   ** View sites and contacts to understand where systems are deployed and who the key contacts are for each location.
-  ** Access the latest configuration details of system per its last check-in, this includes a wide range of available attributes including software versions.
+  ** Access the latest configuration details of a system according to its last check-in, this includes a wide range of available attributes including software versions.
   ** Analyze current and forecasted capacity and storage efficiency for ONTAP, E-Series, and StorageGRID systems.
   ** Discover end-of-support dates for systems, shelves, and disks to proactively plan for tech refreshes.
-  ** Monitor policy variations (PVRs) for your fleet and their expiration.
+  ** Monitor policy variance requests (PVRs) for your NetApp inventory and their expiration.
   ** Review contract details, including hardware and software contract dates and identifiers.
 * Support case management:
   ** Determine which assets have open support cases and their current status.
@@ -52,9 +52,9 @@ You can use the Digital Advisor APIs to perform the following tasks across your 
   ** Monitor actual and published power consumption, as well as projected power, heat, and carbon metrics.
 * Upgrade recommendations and history:
   ** Track upgrade recommendations and history, including which systems were upgraded, when, and to what versions.
-  ** Get recommendations on where to upgrade next and readiness across your fleet.
+  ** Retrieve recommendations on the next upgrade and readiness for upgrade across your NetApp inventory.
 
-All of the data listed above can be integrated through API-first workflows into your in-house tools and processes to help make managing your NetApp fleet easier.
+All of the data listed can be integrated through API-first workflows into your in-house tools and processes to help make managing your NetApp inventory easier.
 
 == Learn about the GraphQL API data query language
 

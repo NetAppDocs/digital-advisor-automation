@@ -51,7 +51,7 @@ In addition to the built-in error codes, the following table shows some addition
 
 | NOT_FOUND_ERROR
 | 200
-| No record found for the given input
+| No record found for the provided input
 
 | UNAUTHENTICATED
 | 200
@@ -61,16 +61,12 @@ In addition to the built-in error codes, the following table shows some addition
 | 429
 | Request rate limit exceeded
 
-| Not applicable
-| 403
-| Request body size more than 8KB
 |===
-
 
 
 == Example error responses
 
-The following examples show error responses with their HTTP status codes.
+The following examples show error responses with their HTTP status codes. GraphQL returns the HTTP status code of `200` as long as the HTTP request is valid and succeeds. Any execution errors are returned inside the JSON response body as shown in the following examples. For more information, refer to link:https://www.apollographql.com/docs/apollo-server/data/errors#setting-http-status-code-and-headers[Apollo Server documentation^].
 
 .BAD_USER_INPUT (HTTP status code - 200)
 

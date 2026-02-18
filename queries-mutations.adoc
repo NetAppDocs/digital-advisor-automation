@@ -15,7 +15,7 @@ The two types of allowed operations in Digital Advisor's GraphQL API are queries
 
 == Queries
 
-GraphQL queries return only the data you specify. In GraphQL, queries work like REST GET requests.  To create a query, you must specify nested subfields until you return only scalar values. The following example query shows how to get system details by including the system object and nested fields to return scalar values for the `serialNumber` and `systemId`.
+GraphQL queries return only the data you specify. In GraphQL, queries operate like REST GET requests.  To create a query, you must specify nested subfields until you return only scalar values. The following example query shows how to get system details by including the system object and nested fields to return scalar values for the `serialNumber` and `systemId`.
 
 NOTE: Queries that do not specify nested subfields are invalid.
 
@@ -37,7 +37,7 @@ query getSystems {
 
 == Mutations
 
-In GraphQL, mutations work like POST, PATCH, and DELETE requests in REST APIs. The mutation name determines which modification is run. To create a mutation, you must specify:
+In GraphQL, mutations operate like POST, PATCH, and DELETE requests in REST. The mutation name determines which modification is run. To create a mutation, you must specify:
 
 * The mutation name. This is the type of modification you want to perform.
 * The input object. This is the data you want to send to the server, composed of input fields. You pass this as an argument to the mutation name.

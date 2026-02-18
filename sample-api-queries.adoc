@@ -22,9 +22,9 @@ Before you use the GraphQL query examples, review the following information:
 
 For more example GraphQL queries, refer to the link:https://studio.apollographql.com/public/ActiveIQ-Graph-Prd-API/variant/current/explorer?collectionId=3c60f539-811a-4494-bfa6-55240b953cbf&focusCollectionId=3c60f539-811a-4494-bfa6-55240b953cbf[Apollo Studio explorer collections^].
 
-== Fleet-wide inventory management
+== NetApp inventory management
 
-Learn how to use the example GraphQL queries for fleet-wide inventory management. 
+Learn how to use the example GraphQL queries for NetApp inventory management. 
 
 === Retrieve a list of sites
 
@@ -331,9 +331,9 @@ query($customerId: String, $after: String) {
 ----
 ====
 
-=== Monitor policy variations (PVRs) 
+=== Monitor policy variance requests (PVRs) 
 
-You can use this query to monitor policy variations (PVRs) for your systems along with their expiration dates.
+You can use this query to monitor policy variance requests (PVRs) for your systems along with their expiration dates.
 
 .Show example
 [%collapsible]
@@ -602,7 +602,7 @@ query($siteId: String) {
 
 Learn how to use the example GraphQL queries for upgrade recommendations and history.
 
-=== Track recommendations and history
+=== Track upgrade recommendations and history
 
 You can use this query to track upgrade recommendations and history, including which systems were upgraded, when, and to which versions.
 
@@ -629,9 +629,9 @@ query($customerId: String, $after: String) {
 ----
 ====
 
-=== Retrieve recommendations
+=== Retrieve upgrade recommendations
 
-You can use this query to retrieve recommendations on where to upgrade next and readiness for the upgrade across your fleet.
+You can use this query to retrieve recommendations on your next upgrade and readiness for upgrade across your NetApp inventory.
 
 .Show example
 [%collapsible]
