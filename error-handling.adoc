@@ -51,7 +51,7 @@ In addition to the built-in error codes, the following table shows some addition
 
 | NOT_FOUND_ERROR
 | 200
-| No record found for the given input
+| No record found for the provided input
 
 | UNAUTHENTICATED
 | 200
