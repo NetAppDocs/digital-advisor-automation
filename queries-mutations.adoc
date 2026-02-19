@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
 summary: "Describes new features, upgrade notes, fixed issues, known limitations, and known issues."
 ---
-= Digital Advisor GraphQL API data queries and mutations
+= Data queries and mutations in the GraphQL API for Digital Advisor
 :icons: font
 :imagesdir: ./media/
 

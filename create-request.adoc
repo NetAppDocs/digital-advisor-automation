@@ -9,7 +9,7 @@ summary: "Learn how to create and submit GraphQL API requests to the Digital Adv
 :imagesdir: ./media/
 
 [.lead]
-Learn how to create a Digital Advisor GraphQL API request to receive data from the Digital Advisor GraphQL API.
+Learn how to create a GraphQL API request to receive data from the GraphQL API for Digital Advisor.
 
 .Before you begin
 

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
 summary: "When the GraphQL Server encounters errors while processing an Digital Advisor GraphQL API operation, its response to the client includes an array containing each error that occurred."
 ---
-= Error handling in Digital Advisor GraphQL APIs
+= Error handling in the GraphQL API for Digital Advisor
 :icons: font
 :imagesdir: ./media/
 

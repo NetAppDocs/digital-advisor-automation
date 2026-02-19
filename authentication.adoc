@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
 summary: "Authenticate using user access tokens to start using the Digital Advisor APIs"
 ---
-= Generate your Digital Advisor API access and refresh tokens
+= Generate your access and refresh tokens to use the Digital Advisor APIs
 :icons: font
 :imagesdir: ./media/
 
