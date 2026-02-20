@@ -30,17 +30,17 @@ AutoSupport data is system-generated and enabled by default on ONTAP and most ot
 
 == Benefits of using Digital Advisor APIs
 
-Digital Advisor brings together business and support system data with configuration and AI-derived insights from AutoSupport telemetry. Instead of siloed views or manual downloads, you can gain programmatic visibility across your NetApp data infrastructure, enabling faster action and smarter decisions.
+Digital Advisor brings together business and support system data with configuration and AI-derived insights from AutoSupport telemetry data. Instead of siloed views or manual downloads, you can gain programmatic visibility across your NetApp data infrastructure, enabling faster action and smarter decisions.
 
 You can use the Digital Advisor APIs to perform the following tasks across your NetApp environment:
 
 * NetApp inventory management:
-  ** Track all purchased systems to identify which are sending telemetry data and which are not. Automatically detect gaps in telemetry and for automatic case generation.
-  ** View sites and contacts to understand where systems are deployed and who the key contacts are for each location.
-  ** Access the latest configuration details of a system according to its last check-in, this includes a wide range of available attributes including software versions.
+  ** Track all purchased systems to identify which systems are sending telemetry data. Automatically detects gaps in telemetry and automatic case generation.
+  ** View sites and contacts to understand where systems are deployed and identify the key contacts for each location.
+  ** Access the latest configuration details of a system according to its last check-in, this includes a wide range of available attributes, including software versions.
   ** Analyze current and forecasted capacity and storage efficiency for ONTAP, E-Series, and StorageGRID systems.
   ** Discover end-of-support dates for systems, shelves, and disks to proactively plan for tech refreshes.
-  ** Monitor policy variance requests (PVRs) for your NetApp inventory and their expiration.
+  ** Monitor product variance requests (PVRs) for your NetApp inventory and their expiration.
   ** Review contract details, including hardware and software contract dates and identifiers.
 * Support case management:
   ** Determine which assets have open support cases and their current status.
@@ -54,7 +54,7 @@ You can use the Digital Advisor APIs to perform the following tasks across your 
   ** Track upgrade recommendations and history, including which systems were upgraded, when, and to what versions.
   ** Retrieve recommendations on the next upgrade and readiness for upgrade across your NetApp inventory.
 
-All of the data listed can be integrated through API-first workflows into your in-house tools and processes to help make managing your NetApp inventory easier.
+All of the data listed can be integrated into your in-house tools and processes through API-first workflows to help make managing your NetApp inventory easier.
 
 == Understand the Digital Advisor GraphQL API data query language
 
@@ -64,9 +64,9 @@ The link:https://graphql.org[GraphQL^] data query language has the following att
 * A strongly typed schema. The schema defines an API's type system and all object relationships.
 * An introspective schema. A client can query the schema for details about the schema.
 * Hierarchical fields. The shape of a GraphQL call mirrors the shape of the JSON data it returns. Nested fields let you query for and receive only the data you specify in a single round trip.
-* An application layer. GraphQL is not a storage model or a database query language. The graph refers to graph structures defined in the schema, where nodes define objects and edges define relationships between objects. The API traverses and returns data based on the schema definitions, independent of how the data is stored.
+* An application layer. GraphQL is not a storage model or a database query language. The "graph" refers to graph structures defined in the schema, where nodes define objects and edges define relationships between objects. The API navigates and returns data based on the schema definitions, independent of how the data is stored.
 
-== Data object relationships
+== Learn about GraphQL API data object relationships
 
 Learn about the GraphQL API schema to understand how data objects relate and exist within a hierarchy. The schema has the following elements:
 
