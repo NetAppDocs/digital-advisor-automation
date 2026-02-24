@@ -9,7 +9,7 @@ summary: "Example GraphQL queries for common Digital Advisor API use cases"
 :imagesdir: ./media/
 
 [.lead]
-After you've generated your tokens and learned how to create a GraphQL request, you can use the example queries to retrieve various types of data from the Digital Advisor GraphQL API.
+After you've generated your tokens and learned how to create a GraphQL request, you can use the example queries to retrieve various types of data from the GraphQL API for Digital Advisor.
 
 Before you use the GraphQL query examples, review the following information:
 

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
 summary: "Describes new features, upgrade notes, fixed issues, known limitations, and known issues."
 ---
-= Digital Advisor GraphQL API data queries and mutations
+= Data queries and mutations in the GraphQL API for Digital Advisor
 :icons: font
 :imagesdir: ./media/
 
@@ -41,7 +41,7 @@ In GraphQL, mutations operate like POST, PATCH, and DELETE requests in REST. The
 
 * The mutation name. This is the type of modification you want to perform.
 * The input object. This is the data you want to send to the server, composed of input fields. You pass this as an argument to the mutation name.
-* The payload object. The data you want to return from the server, composed of return fields. You pass this as the body of the mutation name.
+* The payload object. This is the data you want to return from the server, composed of return fields. You pass this as the body of the mutation name.
 
 .Mutation structure example:
 
@@ -94,7 +94,7 @@ There are three steps required to use variables in your queries.
 }
 ----
 +
-The object must be a valid JSON object.This example uses a string variable. You can also define complex types, such as input objects, or multiple variables.
+The object must be a valid JSON object. This example uses a string variable. You can also define complex types, such as input objects, or multiple variables.
 
 . Pass the variable to the operation as an argument:
 +
@@ -114,11 +114,11 @@ system(customerId: $customerId) {
 +
 In this example, you use the variable for the customer ID you want to retrieve. You specified a type in step 2 because GraphQL enforces strong typing.
 
-This process makes the query argument dynamic. You can simply change the value in the variables object and keep the rest of the query the same. Variables let you update values without changing the query.
+This process makes the query argument dynamic. Variables let you update values without changing the query. You can simply change the value in the variables object and keep the rest of the query the same. 
 
 == Example query
 
-The following query looks up the customerId "123", fetches the first 10 systems, and returns each system's systemId, serialNumber, and capacity information:
+The following query looks up the customer ID "123", fetches the first 10 systems, and returns each system's system ID, serial number, and capacity information:
 
 [source,graphql]
 ----

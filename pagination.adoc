@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
 summary: "Learn how to navigate data sets using cursor-based pagination with the Digital Advisor GraphQL API."
 ---
-= Pagination in Digital Advisor GraphQL APIs
+= Pagination in the GraphQL API for Digital Advisor
 :icons: font
 :imagesdir: ./media/
 

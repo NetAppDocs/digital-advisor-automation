@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
 summary: "The Digital Advisor GraphQL API has limitations in place to protect against excessive or malicious calls to Digital Advisor's servers"
 ---
-= Rate and query limits in Digital Advisor GraphQL APIs
+= Rate and query limits in the GraphQL API for Digital Advisor
 :icons: font
 :imagesdir: ./media/
 
