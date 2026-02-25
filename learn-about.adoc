@@ -9,12 +9,12 @@ summary: "Describes new features, upgrade notes, fixed issues, known limitations
 :imagesdir: ./media/
 
 [.lead]
-NetApp Digital Advisor uses automation and artificial intelligence to analyze telemetry and product data. It provides predictive analytics for NetApp environments through API access to telemetry-driven insights and install base details. You can integrate these analytics into your workflows, dashboards, and NetApp management systems.
+NetApp Digital Advisor uses automation and artificial intelligence to analyze telemetry and product data. It provides predictive analytics for NetApp environments through API access to telemetry-driven insights and install base details. You can integrate these analytics into your workflows, dashboards, and NetApp inventory management systems.
 
 
 == Supported API platforms
 
-Digital Advisor currently supports both GraphQL and REST APIs. However, Digital Advisor is transitioning from REST APIs to GraphQL as its primary API platform to improve performance, flexibility, and scalability. Digital Advisor REST APIs will eventually be deprecated.
+Digital Advisor currently supports both GraphQL and REST APIs. However, Digital Advisor is transitioning from REST to GraphQL as its primary API platform to improve performance, flexibility, and scalability. Digital Advisor REST APIs will eventually be deprecated.
 
 The transition will be phased, with a period of overlap between REST APIs and GraphQL APIs. A deprecation notice is published in the Digital Advisor API catalog for each deprecated REST API endpoint. You need to migrate that specific endpoint to GraphQL within six months.
 
@@ -40,7 +40,7 @@ You can use the Digital Advisor APIs to perform the following tasks across your 
   ** Access the latest configuration details of a system according to its last check-in, this includes a wide range of available attributes, including software versions.
   ** Analyze current and forecasted capacity and storage efficiency for ONTAP, E-Series, and StorageGRID systems.
   ** Discover end-of-support dates for systems, shelves, and disks to proactively plan for tech refreshes.
-  ** Monitor product variance requests (PVRs) for your NetApp inventory and their expiration.
+  ** Monitor policy variance requests (PVRs) for your NetApp inventory and their expiration.
   ** Review contract details, including hardware and software contract dates and identifiers.
 * Support case management:
   ** Determine which assets have open support cases and their current status.
