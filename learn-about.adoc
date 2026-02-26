@@ -60,7 +60,7 @@ All of the data listed can be integrated into your in-house tools and processes 
 
 The link:https://graphql.org[GraphQL^] data query language has the following attributes:
 
-* A link:https://spec.graphql.org/September2025/[specification]. The specification determines the validity of the schema on the API server. The schema determines the validity of client calls.
+* A link:https://spec.graphql.org/September2025/[specification^]. The specification determines the validity of the schema on the API server. The schema determines the validity of client calls.
 * A strongly typed schema. The schema defines an API's type system and all object relationships.
 * An introspective schema. A client can query the schema for details about the schema.
 * Hierarchical fields. The shape of a GraphQL call mirrors the shape of the JSON data it returns. Nested fields let you query for and receive only the data you specify in a single round trip.
