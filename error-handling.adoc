@@ -1,0 +1,180 @@
+---
+permalink: error-handling.html
+sidebar: sidebar
+keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
+summary: "When the GraphQL Server encounters errors while processing an Digital Advisor GraphQL API operation, its response to the client includes an array containing each error that occurred."
+---
+= Error handling in the GraphQL API for Digital Advisor
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+When the GraphQL server encounters errors while processing an Digital Advisor GraphQL API operation, its response to the client includes an array containing each error that occurred. 
+
+Each error in the array has an `extensions` field that provides additional useful information, including an error code and a message. GraphQL allows for a partial response, with omitted entries logged in the errors array showing a reason and a partial success for updates.
+
+The following is an example error response caused by misspelling the `__typename` field in a query:
+
+[source,json]
+----
+{
+  "errors": [
+    {
+      "message": "Cannot query field \"__typenam\" on type \"Query\".",
+      "extensions": {
+        "code": "GRAPHQL_VALIDATION_FAILED"
+      }
+    }
+  ]
+}
+----
+
+== Error codes
+
+GraphQL provides built-in error codes to help categorize different types of errors. For a complete reference of all built-in error codes, refer to the link:https://www.apollographql.com/docs/apollo-server/data/errors#built-in-error-codes[Apollo Server documentation^].
+
+In addition to the built-in error codes, the following table shows some additional types of errors:
+
+[cols="1,1,2",options="header"]
+|===
+| Error Code
+| HTTP Status Code
+| Description
+
+| BAD_USER_INPUT
+| 200
+| Invalid value for a field argument
+
+| FORBIDDEN
+| 200
+| Not authorized due to missing or expired role
+
+| NOT_FOUND_ERROR
+| 200
+| No record found for the provided input
+
+| UNAUTHENTICATED
+| 200
+| No token or expired/invalid token
+
+| USER_API_RATE_LIMIT_EXCEEDED
+| 429
+| Request rate limit exceeded
+
+|===
+
+
+== Example error responses
+
+The following examples show error responses with their HTTP status codes. GraphQL returns the HTTP status code of `200` as long as the HTTP request is valid and succeeds. Any execution errors are returned inside the JSON response body as shown in the following examples. For more information, refer to link:https://www.apollographql.com/docs/apollo-server/data/errors#setting-http-status-code-and-headers[Apollo Server documentation^].
+
+.BAD_USER_INPUT (HTTP status code - 200)
+
+[source,json]
+----
+{
+  "errors": [
+    {
+      "extensions": {
+        "service": "ActiveIQ_GraphQL",
+        "code": "BAD_USER_INPUT",
+        "status": 400
+      },
+      "message": "Either start or end date should be present for the given date range."
+    }
+  ],
+  "data": {
+    "systems": null
+  }
+}
+----
+
+.FORBIDDEN (HTTP status code - 200)
+
+[source,json]
+----
+{
+  "errors": [
+    {
+      "extensions": {
+        "service": "ActiveIQ_GraphQL",
+        "code": "FORBIDDEN",
+        "status": 403
+      },
+      "message": "Access is restricted"
+    }
+  ],
+  "data": null
+}
+----
+
+.NOT_FOUND_ERROR (HTTP status code - 200)
+
+[source,json]
+----
+{
+  "errors": [
+    {
+      "extensions": {
+        "service": "ActiveIQ_GraphQL",
+        "code": "NOT_FOUND_ERROR",
+        "status": 404
+      },
+      "message": "No record found!"
+    }
+  ],
+  "data": null
+}
+----
+
+.UNAUTHENTICATED (HTTP status code - 200)
+
+[source,json]
+----
+{
+  "errors": [
+    {
+      "extensions": {
+        "service": "ActiveIQ_GraphQL",
+        "code": "UNAUTHENTICATED",
+        "status": 401
+      },
+      "message": "Expected a token!"
+    }
+  ],
+  "data": null
+}
+----
+
+.PARTIAL_SUCCESS (HTTP status code - 200)
+
+[source,json]
+----
+{
+  "data": {
+    "riskAcknowledge": {
+      "message": "Risk already acknowledged for 1 system(s).",
+      "status": "partial",
+      "updatedCount": 1
+    }
+  }
+}
+----
+
+.RATE LIMIT (HTTP status code - 429)
+
+[source,json]
+----
+{
+  "errors": [
+    {
+      "extensions": {
+        "service": "ActiveIQ_GraphQL",
+        "code": "USER_API_RATE_LIMIT_EXCEEDED",
+        "status": 429
+      },
+      "message": "User API Rate Limit Exceeded."
+    }
+  ]
+}
+----

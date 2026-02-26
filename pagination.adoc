@@ -1,0 +1,60 @@
+---
+permalink: pagination.html
+sidebar: sidebar
+keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
+summary: "Learn how to navigate data sets using cursor-based pagination with the Digital Advisor GraphQL API."
+---
+= Pagination in the GraphQL API for Digital Advisor
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+Learn how to navigate data sets using cursor-based pagination with the Digital Advisor GraphQL API.
+
+Digital Advisor's GraphQL API limits the number of items that you can fetch in a single request in order to protect against excessive or malicious requests to Digital Advisor's servers. When you use the GraphQL API, you must supply a `pageSize` or `after` argument on any objects. The GraphQL API returns the number of objects specified by the `pageSize` or `after` argument.
+
+== Request a cursor in your query
+
+When using the GraphQL API, you use cursors to navigate through a paginated data set. The cursor represents a specific position in the data set. For example:
+
+[source,graphql]
+----
+query {
+  systems(pageSize: 20, after: null) {
+    cursor
+    totalCount
+    systems {
+      id
+      hostName
+      serialNumber
+    }
+  }
+}
+----
+
+In this example, the `systems` query requests a page size of 20 items starting from the beginning of the data set (after: null). The response includes a `cursor` field that you can use to request the next page of results.
+
+== Change the number of records per page
+
+The `pageSize` and `after` arguments control how many items are returned. For more information, see the link:rate-query-limits.html[rate and query limits] for the GraphQL API.
+
+== Navigate the data set using pagination
+
+After you return a cursor from a query, you can use the cursor to request the next page of results. To do this, you use the `after` and `pageSize` arguments.
+
+For example, if the cursor value from the previous example is 20, you can use this query to request the next page of results:
+
+[source,graphql]
+----
+query {
+  systems(pageSize: 20, after: "20") {
+    cursor
+    totalCount
+    systems {
+      id
+      hostName
+      serialNumber
+    }
+  }
+}
+----

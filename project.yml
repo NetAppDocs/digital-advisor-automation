@@ -1,5 +1,5 @@
 settings:
-  name: "Product Name"
+  name: Digital Advisor API 
   internal:
     pdf_enabled: true
     lipi_enabled: true
@@ -7,8 +7,33 @@ settings:
     pdf_enabled: true
     lipi_enabled: false
     harmony_enabled: false
-
-sidebar: 
+sidebar:
   entries:
+  - title: Digital Advisor API docs
+    url: /index.html
+  - title: Get started
+    entries: 
+    - title: Learn about Digital Advisor APIs
+      url: /learn-about.html
+    - title: Queries and mutations
+      url: /queries-mutations.html
+    - title: Pagination
+      url: /pagination.html
+    - title: Rate and query limits
+      url: /rate-query-limits.html
+    - title: Error handling
+      url: /error-handling.html
+
+  - title: Use the Digital Advisor GraphQL API
+    entries: 
+    - title: Generate access and refresh tokens
+      url: /authentication.html
+    - title: Create a request
+      url: /create-request.html
+    - title: Use example GraphQL queries
+      url: /sample-api-queries.html
   - title: Legal notices
     url: /legal-notices.html
+  
+  
+
