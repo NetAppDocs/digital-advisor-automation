@@ -33,7 +33,7 @@ You need to generate an access token and a refresh token before you can use the 
 
 .Steps
 
-. Navigate to link:https://activeiq.netapp.com[Digital Advisor (ActiveIQ)] and sign in using your NetApp Support Site credentials.
+. Navigate to link:https://activeiq.netapp.com[Digital Advisor (Active IQ^)] and sign in using your NetApp Support Site credentials.
 
 . In the top navigation bar, select *Quick Links*, and then select *API Services*.
 
