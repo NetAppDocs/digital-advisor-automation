@@ -22,8 +22,6 @@ CAUTION: Due to the phased deprecation of Digital Advisor REST APIs, NetApp stro
 
 == Step 1: Access the REST APIs
 
-== Access REST APIs
-
 .Steps
 . From the *Quick Links* menu, click *API Services*.
 . Click link:https://activeiq.netapp.com/catalog/internal/api-reference/introduction[Browse] under the *API Catalog* icon.
