@@ -41,9 +41,7 @@ Compared to REST, GraphQL is organized around objects, not endpoints, which impr
 
 == Comparing GraphQL and REST API operations
 
-GraphQL uses two types of operations to fetch data. These are called queries and mutations.  
-
-In GraphQL, queries operate like GET requests and mutations operate like POST, PATCH, and DELETE requests in REST. The following table shows some differences between REST and GraphQL:
+GraphQL uses two types of operations to fetch data. These are called queries and mutations. Queries operate like GET requests and mutations operate like POST, PATCH, and DELETE requests in REST. The following table shows some differences between REST and GraphQL:
 
 [cols="2,2,4a" options="header"]
 |===
