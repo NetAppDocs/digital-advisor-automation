@@ -38,7 +38,26 @@ You can also examine the *Responses* section of the API to understand the data t
 
 By sliding the toggle to the *Code* view, you can view code samples in various languages.
 
-== Step 2: Identify deprecated REST API endpoints and their GraphQL replacement
+== Step 2: Learn how to replace REST API calls with GraphQL
+
+To replace the REST API calls with GraphQL, you need to learn how to do the following:
+
+* Use queries instead of endpoints.
++
+GraphQL retrieves exactly the fields you need instead of fixed REST payloads (reducing over and under fetching). For more information, see link:queries-mutations.html[Digital Advisor GraphQL API data queries and mutations].
+
+* Pass variables instead of URL parameters.
++
+GraphQL uses variables instead of URL parameters. For more information, see link:queries-mutations.html#use-variables-in-a-query[Use variables in a query].
+
+* Consolidate multiple REST API calls.
++
+With GraphQL, you can combine several requests into a single query and get all the data you need at once.
++
+NOTE: Digital Advisor GraphQL APIs use the same authentication methods as the REST API for token generation. For more information, see link:authentication.html[Generate your Digital Advisor API access and refresh tokens]. 
+
+
+== Step 3: Identify deprecated REST API endpoints and their GraphQL replacement
 
 .Steps
 
@@ -57,24 +76,6 @@ By sliding the toggle to the *Code* view, you can view code samples in various l
 . Review the *Migration information* section which includes the equivalent GraphQL query that corresponds to each deprecated REST API endpoint.
 +
 NOTE: Most of the REST API endpoints have a direct functional replacement available in GraphQL. Review each deprecated REST API endpoint to find the corresponding migration information.
-
-== Step 3: Learn how to replace REST API calls with GraphQL
-
-To replace the REST API calls with GraphQL, you need to learn how to do the following:
-
-* Use queries instead of endpoints.
-+
-GraphQL retrieves exactly the fields you need instead of fixed REST payloads (reducing over and under fetching). For more information, see link:queries-mutations.html[Digital Advisor GraphQL API data queries and mutations].
-
-* Pass variables instead of URL parameters.
-+
-GraphQL uses variables instead of URL parameters. For more information, see link:queries-mutations.html#use-variables-in-a-query[Use variables in a query].
-
-* Consolidate multiple REST API calls.
-+
-With GraphQL, you can combine several requests into a single query and get all the data you need at once.
-+
-NOTE: Digital Advisor GraphQL APIs use the same authentication methods as the REST API for token generation. For more information, see link:authentication.html[Generate your Digital Advisor API access and refresh tokens]. 
 
 
 == Step 4: Test out the GraphQL API
