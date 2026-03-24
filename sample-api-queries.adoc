@@ -125,6 +125,7 @@ public class GraphQLSitesQuery {
         String graphqlEndpoint = "https://gql.aiq.netapp.com/graphql";
         String accessToken = "YOUR_ACCESS_TOKEN";
         
+        // GraphQL query
         String query = """
             query($customerId: String, $after: String) {
               sites(customerId: $customerId, after: $after, pageSize: 10) {
@@ -137,14 +138,17 @@ public class GraphQLSitesQuery {
             }
             """;
         
+        // Variables
         JSONObject variables = new JSONObject();
         variables.put("customerId", "your-customer-id");
         variables.put("after", JSONObject.NULL);
         
+        // Request body
         JSONObject requestBody = new JSONObject();
         requestBody.put("query", query);
         requestBody.put("variables", variables);
         
+        // Create HTTP client and request
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
             .uri(URI.create(graphqlEndpoint))
@@ -153,15 +157,16 @@ public class GraphQLSitesQuery {
             .POST(HttpRequest.BodyPublishers.ofString(requestBody.toString()))
             .build();
         
+        // Send request
         HttpResponse<String> response = client.send(request, 
             HttpResponse.BodyHandlers.ofString());
         
+        // Output
         System.out.println("Status Code: " + response.statusCode());
         System.out.println("Response Body:");
         System.out.println(response.body());
     }
 }
-
 ----
 ====
 
