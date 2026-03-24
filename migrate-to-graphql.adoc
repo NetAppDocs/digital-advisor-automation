@@ -75,7 +75,7 @@ NOTE: Digital Advisor GraphQL APIs use the same authentication methods as the RE
 
 . Review the *Migration information* section, which includes the equivalent GraphQL query that corresponds to each deprecated REST API endpoint. To view the equivalent GraphQL query, select *Sample GraphQL Query* in the table.
 +
-NOTE: Most of the REST API endpoints have a direct functional replacement available in GraphQL. Review each deprecated REST API endpoint to find the corresponding migration information.
+NOTE: Most of the REST API endpoints have a direct functional replacement available in GraphQL. Review each deprecated REST API endpoint to find the corresponding migration information. 
 
 
 == Step 4: Test out the GraphQL API
