@@ -35,6 +35,27 @@ You can use this query to fetch a list of site IDs that are to be used in subseq
 [role="tabbed-block"]
 =====
 
+.GraphQL query example
+--
+
+.Show query
+[%collapsible]
+====
+[source,graphql]
+----
+query($customerId: String, $after: String) {
+  sites(customerId: $customerId, after: $after, pageSize: 10) {
+    cursor
+    sites {
+      id
+      name
+    }
+  }
+}
+----
+====
+
+--
 .Python query example
 --
 
@@ -166,10 +187,10 @@ public class GraphQLSitesQuery {
 
 --
 
-.JavaScript example
+.JavaScript query example
 --
 
-.Show example
+.Show query
 [%collapsible]
 ====
 [source,javascript]
@@ -235,22 +256,6 @@ getSites();
 
 // end tabbed area
 
-.Show example
-[%collapsible]
-====
-[source,graphql]
-----
-query($customerId: String, $after: String) {
-  sites(customerId: $customerId, after: $after, pageSize: 10) {
-    cursor
-    sites {
-      id
-      name
-    }
-  }
-}
-----
-====
 
 
 === Retrieve a list of customers 
