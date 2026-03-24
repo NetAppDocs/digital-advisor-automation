@@ -30,6 +30,217 @@ Learn how to use the example GraphQL queries for NetApp inventory management.
 
 You can use this query to fetch a list of site IDs that are to be used in subsequent queries.
 
+// start tabbed area
+
+[role="tabbed-block"]
+=====
+
+.Python query example
+--
+
+.Show query
+[%collapsible]
+====
+[source,python]
+----
+import requests
+import json
+
+def get_sites():
+    graphql_endpoint = 'https://gql.aiq.netapp.com/graphql'
+    access_token = 'YOUR_ACCESS_TOKEN'
+    
+    # GraphQL query
+    query = """
+        query($customerId: String, $after: String) {
+          sites(customerId: $customerId, after: $after, pageSize: 10) {
+            cursor
+            sites {
+              id
+              name
+            }
+          }
+        }
+    """
+    
+    # Variables
+    variables = {
+        'customerId': 'your-customer-id',
+        'after': None
+    }
+    
+    # Headers
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': f'Bearer {access_token}'
+    }
+    
+    # Request body
+    payload = {
+        'query': query,
+        'variables': variables
+    }
+    
+    try:
+        # Send request
+        response = requests.post(
+            graphql_endpoint,
+            headers=headers,
+            json=payload
+        )
+        
+        # Output
+        print(f'Status Code: {response.status_code}')
+        print('Response Body:')
+        print(json.dumps(response.json(), indent=2))
+        
+        return response.json()
+    except Exception as e:
+        print(f'Error: {e}')
+
+if __name__ == '__main__':
+    get_sites()
+
+----
+
+====
+
+-- 
+.Java query example
+--
+
+.Show query
+[%collapsible]
+====
+[source,java]
+----
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import org.json.JSONObject;
+
+public class GraphQLSitesQuery {
+    public static void main(String[] args) throws Exception {
+        String graphqlEndpoint = "https://gql.aiq.netapp.com/graphql";
+        String accessToken = "YOUR_ACCESS_TOKEN";
+        
+        // GraphQL query
+        String query = """
+            query($customerId: String, $after: String) {
+              sites(customerId: $customerId, after: $after, pageSize: 10) {
+                cursor
+                sites {
+                  id
+                  name
+                }
+              }
+            }
+            """;
+        
+        // Variables
+        JSONObject variables = new JSONObject();
+        variables.put("customerId", "your-customer-id");
+        variables.put("after", JSONObject.NULL);
+        
+        // Request body
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("query", query);
+        requestBody.put("variables", variables);
+        
+        // Create HTTP client and request
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create(graphqlEndpoint))
+            .header("Content-Type", "application/json")
+            .header("Authorization", "Bearer " + accessToken)
+            .POST(HttpRequest.BodyPublishers.ofString(requestBody.toString()))
+            .build();
+        
+        // Send request
+        HttpResponse<String> response = client.send(request, 
+            HttpResponse.BodyHandlers.ofString());
+        
+        // Output
+        System.out.println("Status Code: " + response.statusCode());
+        System.out.println("Response Body:");
+        System.out.println(response.body());
+    }
+}
+----
+====
+
+--
+
+.Java script example
+--
+
+.Show example
+[%collapsible]
+====
+[source,javascript]
+----
+const fetch = require('node-fetch'); // or use axios
+
+async function getSites() {
+    const graphqlEndpoint = 'https://gql.aiq.netapp.com/graphql';
+    const accessToken = 'YOUR_ACCESS_TOKEN';
+    
+    // GraphQL query
+    const query = `
+        query($customerId: String, $after: String) {
+          sites(customerId: $customerId, after: $after, pageSize: 10) {
+            cursor
+            sites {
+              id
+              name
+            }
+          }
+        }
+    `;
+    
+    // Variables
+    const variables = {
+        customerId: 'your-customer-id',
+        after: null
+    };
+    
+    try {
+        const response = await fetch(graphqlEndpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${accessToken}`
+            },
+            body: JSON.stringify({
+                query: query,
+                variables: variables
+            })
+        });
+        
+        const data = await response.json();
+        
+        // Output
+        console.log('Status Code:', response.status);
+        console.log('Response Body:');
+        console.log(JSON.stringify(data, null, 2));
+        
+        return data;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+getSites();
+----
+====
+
+--
+
+=====
+
+// end tabbed area
+
 .Show example
 [%collapsible]
 ====
@@ -46,6 +257,7 @@ query($customerId: String, $after: String) {
 }
 ----
 ====
+
 
 === Retrieve a list of customers 
 
