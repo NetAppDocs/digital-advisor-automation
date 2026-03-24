@@ -67,13 +67,13 @@ NOTE: Digital Advisor GraphQL APIs use the same authentication methods as the RE
 
 . In the top navigation bar, select *Quick Links*, and then select *API Services*.
 
-. To review the list of APIs scheduled for deprecation, select *Browse* under the *API Catalog* icon, and then select *Deprecated APIs*.
+. To review the list of APIs scheduled for deprecation, select *Browse*, and then select *Deprecated APIs*.
 
 . From the list of deprecated APIs, confirm the following:
 * Whether an endpoint you are using in your integration is listed.
 * The expected retirement date for endpoints you are using.
 
-. Review the *Migration information* section which includes the equivalent GraphQL query that corresponds to each deprecated REST API endpoint.
+. Review the *Migration information* section, which includes the equivalent GraphQL query that corresponds to each deprecated REST API endpoint. To view the equivalent GraphQL query, select *Sample GraphQL Query* in the table.
 +
 NOTE: Most of the REST API endpoints have a direct functional replacement available in GraphQL. Review each deprecated REST API endpoint to find the corresponding migration information.
 
