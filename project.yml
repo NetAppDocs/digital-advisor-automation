@@ -1,10 +1,8 @@
-jekyll: java-code-blocks
 settings:
   name: Digital Advisor API 
   internal:
     pdf_enabled: true
     lipi_enabled: true
-    api_standardize: false
   prod:
     pdf_enabled: true
     lipi_enabled: false
