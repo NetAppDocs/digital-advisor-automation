@@ -52,16 +52,16 @@ GraphQL uses two types of operations to fetch data. These are called queries and
 
 // first body row
 |Path parameters
-| `/users/123`
-| `user(id: 123)`
+| `/v1/system/inventory/details/level/customer/id/123`
+| `systems(customerId: 123)`
 
 | Filters
-| `?role=admin`
-| `users(role: ADMIN)`
+| `?filterByPlatform=ONTAP`
+| `systems(platformType: [ONTAP])`
 
 | Pagination (cursor)
-| `?cursor=abc`
-| `users(first:10, after:"abc")`
+| `?start=0&limit=10`
+| `systems(after: "0", pageSize: 10)`
 
 
 // table end
