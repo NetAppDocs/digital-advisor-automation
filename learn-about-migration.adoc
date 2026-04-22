@@ -2,7 +2,7 @@
 permalink: learn-about-migration.html
 sidebar: sidebar
 keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
-summary: "Describes new features, upgrade notes, fixed issues, known limitations, and known issues."
+summary: "Explains why Digital Advisor is migrating from REST APIs to GraphQL and highlights the benefits of moving REST API integrations to GraphQL."
 ---
 = Learn about migrating Digital Advisor REST API endpoints to GraphQL
 :icons: font
@@ -53,7 +53,7 @@ GraphQL uses two types of operations to fetch data. These are called queries and
 // first body row
 |Path parameters
 | `/v1/system/inventory/details/level/customer/id/123`
-| `systems(customerId: 123)`
+| `systems(customerId: "123")`
 
 | Filters
 | `?filterByPlatform=ONTAP`
@@ -66,5 +66,4 @@ GraphQL uses two types of operations to fetch data. These are called queries and
 
 // table end
 |===
-	
 To learn more about queries and mutations, refer to link:queries-mutations.html[Digital Advisor GraphQL API data queries and mutations].

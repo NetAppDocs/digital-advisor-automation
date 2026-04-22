@@ -47,9 +47,6 @@ query($customerId: String, $after: String) {
 ----
 ====
 
-
-
-
 === Retrieve a list of customers 
 
 You can use this query to fetch a list of customer IDs that are to be used in subsequent queries.
