@@ -1,0 +1,78 @@
+---
+permalink: migrate-to-graphql.html
+sidebar: sidebar
+keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call
+summary: "Learn how to identify deprecated Digital Advisor REST API endpoints and migrate them to their GraphQL replacements."
+---
+= Migrate deprecated Digital Advisor REST API endpoints to GraphQL
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+The transition from REST APIs to GraphQL APIs will be phased, with a period of overlap between REST APIs and GraphQL APIs. Learn how to identify and migrate deprecated REST API endpoints to GraphQL.
+
+A deprecation notice will be published in the Digital Advisor API catalog for each deprecated REST API endpoint. You need to migrate that specific endpoint to GraphQL within six months. 
+
+CAUTION: Due to the phased deprecation of Digital Advisor REST APIs, NetApp strongly recommends that all new API integrations use the GraphQL-based API.
+
+.About this task 
+
+* You should first migrate the endpoints that already have the six-month deprecation notice before you migrate other endpoints. NetApp updates these first and provides confirmed GraphQL replacements.
+* GraphQL is organized around objects, not endpoints, which improves predictability. To understand the schema types, refer to the link:https://studio.apollographql.com/public/ActiveIQ-Graph-Prd-API/variant/current/explorer[GraphQL Apollo Studio explorer^].
+
+
+== Step 1: Learn how to replace REST API calls with GraphQL
+
+To replace the REST API calls with GraphQL, you need to learn how to do the following:
+
+* Use queries instead of endpoints.
++
+GraphQL retrieves exactly the fields you need instead of fixed REST payloads (reducing over and under fetching). For more information, see link:queries-mutations.html[Digital Advisor GraphQL API data queries and mutations].
+
+* Pass variables instead of URL parameters.
++
+GraphQL uses variables instead of URL parameters. For more information, see link:queries-mutations.html#use-variables-in-a-query[Use variables in a query].
+
+* Consolidate multiple REST API calls.
++
+With GraphQL, you can combine several requests into a single query and get all the data you need at once.
++
+NOTE: Digital Advisor GraphQL APIs use the same authentication methods as the REST API for token generation. For more information, see link:authentication.html[Generate your Digital Advisor API access and refresh tokens]. 
+
+
+== Step 2: Identify deprecated REST API endpoints and their GraphQL replacement
+
+.Steps
+
+. Review the Digital Advisor REST APIs that you are currently using in your integration. 
+
+. Navigate to link:https://activeiq.netapp.com[Digital Advisor (ActiveIQ)^] and sign in using your NetApp Support Site credentials.
+
+. In the top navigation bar, select *Quick Links*, and then select *API Services*.
+
+. To review the list of APIs scheduled for deprecation, select *Browse*, and then select *Deprecated APIs*.
+
+. From the list of deprecated APIs, confirm the following:
+* Whether an endpoint you are using in your integration is listed.
+* The expected retirement date for endpoints you are using.
+
+. Review the *Migration information* section, which includes the equivalent GraphQL query that corresponds to each deprecated REST API endpoint. To view the equivalent GraphQL query, select *Sample GraphQL Query* in the table.
++
+NOTE: Most of the REST API endpoints have a direct functional replacement available in GraphQL. Review each deprecated REST API endpoint to find the corresponding migration information. 
+
+
+== Step 3: Test out the GraphQL API
+
+You can use the link:https://gql.aiq.netapp.com/[GraphQL API Explorer tool^] to perform the following actions:
+
+* Run sample queries
+* Validate output
+* Adjust your field selection
+* Test variables
++
+For more information, see link:create-request.html[Use the Digital Advisor GraphQL APIs].
+
+.After you finish
+
+After you've learned how to use the GraphQL API and validated the GraphQL version of your deprecated endpoint, update your automation code and scripts and discontinue the use of the deprecated REST call before its retirement date.
+

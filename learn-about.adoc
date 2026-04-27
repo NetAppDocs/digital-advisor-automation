@@ -56,9 +56,9 @@ You can use the Digital Advisor APIs to perform the following tasks across your 
 
 All of the data listed can be integrated into your in-house tools and processes through API-first workflows to help make managing your NetApp inventory easier.
 
-== Understand the Digital Advisor GraphQL API data query language
+== Learn about the GraphQL API data query language
 
-The link:https://graphql.org[GraphQL^] data query language has the following attributes:
+link:https://graphql.org[GraphQL^] is an open source data query language that allows clients to request exactly the data they need. The GraphQL data query language has the following attributes:
 
 * A link:https://spec.graphql.org/September2025/[specification^]. The specification determines the validity of the schema on the API server. The schema determines the validity of client calls.
 * A strongly typed schema. The schema defines an API's type system and all object relationships.
