@@ -76,7 +76,7 @@ The following curl example shows how to refresh your tokens in REST. If you are 
 ----
 curl -X POST https://api.activeiq.netapp.com/v1/tokens/accessToken \
   -H "Content-Type: application/json" \
-  -d '{"refreshToken": "YOUR_REFRESH_TOKEN"}'
+  -d '{"refresh_token": "YOUR_REFRESH_TOKEN"}'
 ----
 
 The response includes a new access token and refresh token.
