@@ -1,0 +1,36 @@
+---
+permalink: decide-token-type.html
+sidebar: sidebar
+keywords: learn, digital advisor, active-iq, api, token, access token, refresh token, personal access token, pat, authentication
+summary: "Decide whether to use access and refresh tokens or a personal access token for Digital Advisor API authentication"
+---
+= Decide whether to use access and refresh tokens or a personal access token for Digital Advisor API authentication 
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+You can choose to use access and refresh tokens or a personal access token to authenticate with Digital Advisor APIs.
+
+The following table shows the differences between each authentication method. You can use this table to choose the correct authentication method for your environment and use case.
+
+[cols="1,1,2", options="header"]
+|===
+|Token type |Validity |Requirements
+
+|Access and refresh tokens
+a|Access token: 1 hour
+
+Refresh token: 7 days
+| When it expires, the access token must be refreshed using the refresh token. The refresh token must be used within 7 days. After you refresh, you receive a new token. You must save the new token to use it the next time your access token expires.
+
+|Personal access token (PAT)
+|Up to 90 days (single token)
+|Use the same token until it expires or is revoked. No refresh token is required.
+|===
+
+.What's next?
+
+After you've decided which token type you want to use, generate your tokens by choosing one of the following procedures:
+
+* xref:authentication.adoc[Generate access and refresh tokens]
+* xref:generate-pat-token.adoc[Generate a personal access token]

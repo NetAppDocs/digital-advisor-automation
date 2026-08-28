@@ -28,7 +28,9 @@ sidebar:
     entries: 
     - title: Generate tokens
       entries:
-      - title: Generate access and refresh tokens
+      - title: Choose the token type
+        url: /decide-token-type.html
+      - title: Generate an access and refresh token
         url: /authentication.html
       - title: Generate a personal access token
         url: /generate-pat-token.html

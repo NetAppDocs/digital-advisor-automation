@@ -17,7 +17,7 @@ indexpage:
     - title: Use Digital Advisor APIs
       links: 
         - title: Generate tokens
-          url: /authentication.html
+          url: /decide-token-type.html
         - title: Use the Digital Advisor GraphQL APIs
           url: /create-request.html
         - title: Use example queries
