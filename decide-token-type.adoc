@@ -23,7 +23,7 @@ a|Access token: 1 hour
 Refresh token: 7 days
 | When it expires, the access token must be refreshed using the refresh token. The refresh token must be used within 7 days. After you refresh, you receive a new token. You must save the new token to use it the next time your access token expires.
 
-|Personal access token (PAT)
+|Personal access token 
 |Up to 90 days (single token)
 |Use the same token until it expires or is revoked. No refresh token is required.
 |===
