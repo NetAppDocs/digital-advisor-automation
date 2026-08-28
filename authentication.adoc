@@ -15,7 +15,7 @@ Learn how to generate access and refresh tokens before using the Digital Advisor
 
 You need to generate tokens before you can use the Digital Advisor GraphQL APIs. The following steps show how to generate access and refresh tokens, if you want to use a personal access token instead, refer to xref:generate-pat-token.adoc[Generate a personal access token].
 
-For information on choosing the token type, refer to link:decide-token-type.html[Decide whether to use access and refresh tokens or a personal access token].
+For information on choosing the token type, refer to link:decide-token-type.html[Decide whether to use a personal access token or access and refresh tokens].
 
 
 .About this task
