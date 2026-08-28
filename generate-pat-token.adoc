@@ -13,7 +13,9 @@ Learn how to generate, use, and revoke a personal access token before using the 
 
 == Generate your personal access token
 
-You need to generate a personal access token before you can use the Digital Advisor GraphQL APIs.
+You need to generate tokens before you can use the Digital Advisor GraphQL APIs. The following steps show how to generate a personal access token, if you want to use access and refresh tokens instead, refer to xref:authentication.adoc[Generate access and refresh tokens].
+
+For information on choosing the correct token type, refer to link:decide-token-type.html[Decide whether to use access and refresh tokens or a personal access token].
 
 .About this task
 

@@ -30,10 +30,10 @@ sidebar:
       entries:
       - title: Choose the token type
         url: /decide-token-type.html
-      - title: Generate an access and refresh token
-        url: /authentication.html
       - title: Generate a personal access token
         url: /generate-pat-token.html
+      - title: Generate an access and refresh token
+        url: /authentication.html
     - title: Create a request
       url: /create-request.html
     - title: Use example GraphQL queries
