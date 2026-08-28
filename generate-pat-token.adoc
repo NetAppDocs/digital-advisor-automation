@@ -90,7 +90,7 @@ CAUTION: Review the last authenticated date regularly and revoke any token that 
 
 == Revoke a personal access token
 
-The following steps show how you can revoke a personal access token:
+The following steps show how you can revoke a personal access token.
 
 .Steps
 
