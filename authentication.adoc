@@ -9,7 +9,7 @@ summary: "Authenticate using user access tokens to start using the Digital Advis
 :imagesdir: ./media/
 
 [.lead]
-Learn how to generate and refresh the required tokens before using the Digital Advisor APIs. The tokens ensure that only authorized persons and systems can access your NetApp information.
+Learn how to generate access and refresh tokens before using the Digital Advisor APIs. The tokens ensure that only authorized users and systems can access your NetApp information.
 
 == Generate your access and refresh tokens
 
