@@ -13,7 +13,7 @@ You can choose to use access and refresh tokens or a personal access token to au
 
 The following table shows the differences between each authentication method. You can use this table to choose the correct authentication method for your environment and use case.
 
-[cols="1,1,2", options="header"]
+[cols="1,1,3", options="header"]
 |===
 |Token type |Validity |Requirements
 
