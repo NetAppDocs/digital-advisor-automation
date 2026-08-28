@@ -25,7 +25,7 @@ Refresh token: 7 days
 
 |Personal access token 
 |Up to 90 days (single token)
-|Use the same token until it expires or is revoked. No refresh token is required.
+|The same token can be used until it expires or is revoked. No refresh token is required.
 |===
 
 .What's next?
