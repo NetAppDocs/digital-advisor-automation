@@ -38,7 +38,7 @@ You must have valid NetApp Support Site credentials.
 . Select *Register for API access*, and then select *Register*.
 . Complete the authorization request form, and then select *Submit*.
 +
-NOTE: Activation is automatic and should be instantaneous. After you are authorized to use the Digital Advisor APIs, you can generate tokens to use when making programmatic API calls.
+NOTE: Activation is automatic and should be approved instantly. After you are authorized to use the Digital Advisor APIs, you can generate tokens to use when making programmatic API calls.
 
 . After your registration is approved, go back to the *API Services* page, and select *Generate Token*.
 . Select the *Personal Access Tokens* tab, and then select *Create Personal Access Token*.
