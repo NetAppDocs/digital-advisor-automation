@@ -64,9 +64,9 @@ curl -X POST https://gql.aiq.netapp.com/graphql \
 
 Replace `YOUR_PERSONAL_ACCESS_TOKEN` with the token value you saved when you created the token. Unlike an access token, a personal access token does not need to be refreshed and can be used until it expires or is revoked.
 
-== Manage and revoke your personal access tokens
+== View token information
 
-The *Personal Access Tokens* tab lists the name, creation date, expiration date, status, and last authenticated date of each token you created. The token value itself is never shown again in this list.
+The *Personal Access Tokens* tab lists the name, creation date, expiration date, status, and last authenticated date of each token you created. The token value itself is not shown in in this list.
 
 Each token has one of the following statuses:
 
@@ -85,6 +85,8 @@ Each token has one of the following statuses:
 |===
 
 CAUTION: Review the last authenticated date regularly and revoke any token that is unused, unexpected, or no longer required. Revoke a token immediately if you believe it was exposed.
+
+=== Revoke a personal access token
 
 The following steps show how you can revoke a personal access token:
 
