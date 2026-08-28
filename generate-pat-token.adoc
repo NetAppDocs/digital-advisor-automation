@@ -43,7 +43,7 @@ NOTE: Your registration should be approved instantly and activation is automatic
 . After your registration is approved, go back to the *API Services* page, and select *Generate Token*.
 . Select the *Personal Access Tokens* tab, and then select *Create Personal Access Token*.
 . Enter a unique, descriptive token name.
-. Enter the number of days until expiration. The value must be a whole number from 1 to 90.
+. Enter the number of days until expiration. The value must be a whole number from 1 through 90.
 . Select *Generate Token*.
 . Copy the generated token and save it in a secure location. Confirm that you saved it, and then select *Done*.
 
