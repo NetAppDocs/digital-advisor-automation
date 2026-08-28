@@ -43,13 +43,13 @@ NOTE: Activation is automatic and should be instantaneous. After you are authori
 . After your registration is approved, go back to the *API Services* page, and select *Generate Token*.
 . Select the *Personal Access Tokens* tab, and then select *Create Personal Access Token*.
 . Enter a unique, descriptive token name.
-. Enter the number of days until expiration. The value must be a whole number from 1 through 90.
+. Enter the number of days until expiration. The value must be a whole number from 1 to 90.
 . Select *Generate Token*.
-. Copy the generated token and save it in your secure credential store. Confirm that you saved it, and then select *Done*.
+. Copy the generated token and save it in a secure location. Confirm that you saved it, and then select *Done*.
 
 [CAUTION]
 ====
-You must save the token after it is generated. The complete token value is displayed only once. If you select *Done* before saving the token, revoke that token and create a new one.
+You must save the token after it is generated. The complete token value is displayed only at creation. If you select *Done* before saving the token, revoke that token and create a new one.
 ====
 
 == Use your personal access token
