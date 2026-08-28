@@ -1,0 +1,101 @@
+---
+permalink: generate-pat-token.html
+sidebar: sidebar
+keywords: learn, digital advisor, active-iq, api, query, graphql, api, rest, call, token, personal, access, authenticate
+summary: "Learn how to generate, use, and revoke a personal access token before using the Digital Advisor APIs. The token ensures that only authorized users and systems can access your NetApp information"
+---
+= Generate your personal access token to use the Digital Advisor APIs
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+Learn how to generate, use, and revoke a personal access token before using the Digital Advisor APIs. The token ensures that only authorized users and systems can access your NetApp information.
+
+== Generate your personal access token
+
+You need to generate a personal access token before you can use the Digital Advisor GraphQL APIs.
+
+.About this task
+
+* When you create a token, you choose how long the token is valid (up to a maximum of 90 days).
+* You can have up to ten active tokens at a time.
+* The complete token value is only shown at the time you create it.
+* When a token expires, you can create a new token and update the application that uses it.
+* Store your token securely, such as in a password manager or secure file.
+* Never share your token or email it to anyone, and never commit it to source control.
+* Set reminders to log in and get a new token before your current token expires.
+
+.Before you begin
+
+You must have valid NetApp Support Site credentials.
+
+.Steps
+
+. Navigate to https://activeiq.netapp.com/[Digital Advisor (Active IQ)^] and sign in using your NetApp Support Site credentials.
+. In the top navigation bar, select *Quick Links*, and then select *API Services*.
+. Select *Register for API access*, and then select *Register*.
+. Complete the request for the authorization form, and then select *Submit*.
++
+NOTE: Activation is automatic and should be instantaneous. After you are authorized to use the Digital Advisor APIs, you can generate tokens to use when making programmatic API calls.
+
+. After your registration is approved, go back to the *API Services* page, and select *Generate Token*.
+. Select the *Personal Access Tokens* tab, and then select *Create Personal Access Token*.
+. Enter a unique, descriptive token name.
+. Enter the number of days until expiration. The value must be a whole number from 1 through 90.
+. Select *Generate Token*.
+. Copy the generated token and save it in your secure credential store. Confirm that you saved it, and then select *Done*.
+
+[CAUTION]
+====
+You must save the token after it is generated. The complete token value is displayed only once. If you select *Done* before saving the token, revoke that token and create a new one.
+====
+
+== Use your personal access token
+
+The following `curl` example shows how to use your personal access token in an API request.
+
+[source,bash]
+----
+curl -X POST https://gql.aiq.netapp.com/graphql \
+  -H "Authorization: YOUR_PERSONAL_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "query getSystems { systems { totalCount cursor systems { serialNumber systemId platformType } } }"}'
+----
+
+Replace `YOUR_PERSONAL_ACCESS_TOKEN` with the token value you saved when you created the token. Unlike an access token, a personal access token does not need to be refreshed and can be used until it expires or is revoked.
+
+== Manage and revoke your personal access tokens
+
+The *Personal Access Tokens* tab lists the name, creation date, expiration date, status, and last authenticated date of each token you created. The token value itself is never shown again in this list.
+
+Each token has one of the following statuses:
+
+[cols="1,3", options="header"]
+|===
+|Status |Description
+
+|Active
+|The token authenticates API requests until it expires or you revoke it.
+
+|Expired
+|The expiration date has passed and the token no longer authenticates API requests.
+
+|Revoked
+|You disabled the token before its expiration date and it no longer authenticates API requests. The list shows the date it was revoked.
+|===
+
+CAUTION: Review the last authenticated date regularly and revoke any token that is unused, unexpected, or no longer required. Revoke a token immediately if you believe it was exposed.
+
+The following steps show how you can revoke a personal access token:
+
+.Steps
+
+. From the *API Services* page, select *Generate Token*.
+. Select the *Personal Access Tokens* tab.
+. Find the active token you want to disable and select *Revoke*.
+. Review the confirmation message and select *Revoke Token*.
+
+[CAUTION]
+====
+The token is disabled immediately and cannot be re-enabled. Any application using the token loses access to the APIs until you install a new token.
+====

@@ -26,8 +26,12 @@ sidebar:
 
   - title: Use the Digital Advisor GraphQL API
     entries: 
-    - title: Generate access and refresh tokens
-      url: /authentication.html
+    - title: Generate tokens
+      entries:
+      - title: Generate access and refresh tokens
+        url: /authentication.html
+      - title: Generate a personal access token
+        url: /generate-pat-token.html
     - title: Create a request
       url: /create-request.html
     - title: Use example GraphQL queries

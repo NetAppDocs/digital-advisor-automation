@@ -16,7 +16,7 @@ indexpage:
           url: /rate-query-limits.html
     - title: Use Digital Advisor APIs
       links: 
-        - title: Generate access and refresh tokens
+        - title: Generate tokens
           url: /authentication.html
         - title: Use the Digital Advisor GraphQL APIs
           url: /create-request.html
