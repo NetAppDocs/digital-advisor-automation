@@ -45,15 +45,6 @@ This endpoint is intended for programmatic access by MCP clients. It does not su
 * An active Digital Advisor personal access token is required to use the Digital Advisor MCP server. If you don't already have a token, follow the steps to link:generate-pat-token.html[generate your personal access token to use the Digital Advisor APIs].
 * Your client application must support remote HTTP MCP servers and custom request headers.
 
-== Limitations 
-
-* Results are limited to the Digital Advisor information that the authenticated user is authorized to access.
-* Search text must contain between 3 to 50 supported characters.
-* Tools that return multiple records might require pagination to retrieve the complete result set.
-* The `capacityForecast` tool accepts one cluster or one system per request.
-* The `capacity` tool includes only systems with recent AutoSupport data.
-* AutoSupport raw section content is truncated at 1 MB.
-
 .What's next?
 
 link:get-started-digital-advisor-mcp.html[Get started with the Digital Advisor MCP server]

@@ -61,6 +61,7 @@ Your configuration file contains a credential. Do not share it or commit it to s
 
 The following tools are available from the Digital Advisor MCP server. Most tools require an identifier that you can obtain by using the `search` tool first.
 
+* Results are limited to the Digital Advisor information that the authenticated user is authorized to access.
 * Search text must contain between 3 to 50 supported characters.
 * Tools that return multiple records might require pagination to retrieve the complete result set.
 * The `capacityForecast` tool accepts one cluster or one system per request.
