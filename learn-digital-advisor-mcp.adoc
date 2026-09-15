@@ -39,6 +39,16 @@ Your MCP client sends your Digital Advisor personal access token in the `Authori
 This endpoint is intended for programmatic access by MCP clients. It does not support direct access from a web browser.
 ====
 
+== Requirements
+
+* You must have access to Digital Advisor and be registered for Digital Advisor API access.
+* An active Digital Advisor personal access token is required to use the Digital Advisor MCP server. If you don't already have a token, follow the steps to link:generate-pat-token.html[generate your personal access token to use the Digital Advisor APIs].
+* Your client application must support remote HTTP MCP servers and custom request headers.
+
+== Limitations 
+
+Results are limited to the Digital Advisor information that the authenticated user is authorized to access.
+
 
 .What's next?
 

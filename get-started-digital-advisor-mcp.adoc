@@ -17,7 +17,7 @@ Before configuring the Digital Advisor MCP server, verify the following:
 
 * You have access to Digital Advisor.
 * You are registered for Digital Advisor API access.
-* You have an active Digital Advisor personal access token. Refer to link:generate-pat-token.html[Generate your personal access token to use the Digital Advisor APIs].
+* You have an active Digital Advisor personal access token. If you don't already have a token, follow the steps to link:generate-pat-token.html[generate your personal access token to use the Digital Advisor APIs].
 * Your application supports remote HTTP MCP servers and custom request headers.
 
 == Configure your MCP client
@@ -61,7 +61,6 @@ Your configuration file contains a credential. Do not share it or commit it to s
 
 The following tools are available from the Digital Advisor MCP server. Most tools require an identifier that you can obtain by using the `search` tool first.
 
-* Results are limited to the Digital Advisor information that the authenticated user is authorized to access.
 * Search text must contain 3 to 50 supported characters.
 * Tools that return multiple records might require pagination to retrieve the complete result set.
 * The `capacityForecast` tool accepts one cluster or one system per request.
