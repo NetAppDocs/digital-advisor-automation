@@ -47,8 +47,12 @@ This endpoint is intended for programmatic access by MCP clients. It does not su
 
 == Limitations 
 
-Results are limited to the Digital Advisor information that the authenticated user is authorized to access.
-
+* Results are limited to the Digital Advisor information that the authenticated user is authorized to access.
+* Search text must contain between 3 to 50 supported characters.
+* Tools that return multiple records might require pagination to retrieve the complete result set.
+* The `capacityForecast` tool accepts one cluster or one system per request.
+* The `capacity` tool includes only systems with recent AutoSupport data.
+* AutoSupport raw section content is truncated at 1 MB.
 
 .What's next?
 
