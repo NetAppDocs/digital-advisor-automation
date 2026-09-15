@@ -13,10 +13,7 @@ Configure the Digital Advisor Model Context Protocol (MCP) server in your MCP cl
 
 == Prerequisites
 
-* You must have access to Digital Advisor.
-* You must be registered for Digital Advisor API access.
-* You must have an active Digital Advisor personal access token. For more information, refer to link:generate-pat-token.html[Generate your personal access token to use the Digital Advisor APIs].
-* Your application must support remote HTTP MCP servers and custom request headers.
+Before configuring the Digital Advisor MCP server, ensure that you have reviewed the requirements and limitations outlined in link:learn-digital-advisor-mcp.html[Learn about the Digital Advisor MCP server].
 
 == Configure your MCP client
 

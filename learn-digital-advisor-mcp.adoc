@@ -41,11 +41,12 @@ This endpoint is intended for programmatic access by MCP clients. It does not su
 
 == Requirements
 
-Verify you hav th
-* You must have access to Digital Advisor.
-* You must be registered for Digital Advisor API access.
-* You must have an active Digital Advisor personal access token. link:generate-pat-token.html[Generate your personal access token to use the Digital Advisor APIs].
-* Your application must support remote HTTP MCP servers and custom request headers.
+Before configuring the Digital Advisor MCP server, verify the following:
+
+* You have access to Digital Advisor.
+* You are registered for Digital Advisor API access.
+* You have an active Digital Advisor personal access token. link:generate-pat-token.html[Generate your personal access token to use the Digital Advisor APIs].
+* Your application supports remote HTTP MCP servers and custom request headers.
 
 == Limitations
 
