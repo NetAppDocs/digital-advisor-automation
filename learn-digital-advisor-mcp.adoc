@@ -29,7 +29,7 @@ You can use the Digital Advisor MCP server to:
 The Digital Advisor MCP server is a remote MCP server that uses HTTP. Compatible MCP clients connect to the following endpoint:
 
 ----
-\https://gql.aiq.netapp.com/mcp
+https://gql.aiq.netapp.com/mcp
 ----
 
 Your MCP client sends your Digital Advisor personal access token in the `Authorization` header of each request. The server uses the permissions associated with the token to determine which Digital Advisor information you can access.
