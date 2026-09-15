@@ -1,0 +1,107 @@
+---
+permalink: get-started-digital-advisor-mcp.html
+sidebar: sidebar
+keywords: learn, digital advisor, active-iq, api, query, graphql, api, mcp, model, context, protocol, server, requirements, limitations
+summary: "Learn how to identify deprecated Digital Advisor REST API endpoints and migrate them to their GraphQL replacements."
+---
+= Get started with the Digital Advisor MCP server
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+Configure the Digital Advisor Model Context Protocol (MCP) server in your MCP client application to securely access Digital Advisor information through MCP tools.
+
+== Prerequisites
+
+* You must have access to Digital Advisor.
+* You must be registered for Digital Advisor API access.
+* You must have an active Digital Advisor personal access token.
+See _Generate your personal access token to use the Digital Advisor APIs_.
+* Your application must support remote HTTP MCP servers and custom request headers.
+
+== Configure your MCP client
+
+Use the following steps to add the Digital Advisor MCP server to your MCP client configuration.
+
+.Steps
+
+. Open the MCP configuration file for your MCP client.
+
+. Add the Digital Advisor MCP server, and then save the file.
++
+[source,json]
+----
+{
+  "servers": {
+    "netapp-digital-advisor": {
+      "url": "https://gql.aiq.netapp.com/mcp",
+      "type": "http",
+      "headers": {
+        "Authorization": "YOUR_PERSONAL_ACCESS_TOKEN"
+      }
+    }
+  },
+  "inputs": []
+}
+----
+
+. Replace `YOUR_PERSONAL_ACCESS_TOKEN` with the token value you saved when you created the token.
+
+. Restart or reload your MCP client so that it connects to the server.
+
+. Confirm that the Digital Advisor tools are listed in your MCP client.
+
+[CAUTION]
+====
+Your configuration file contains a credential. Do not share it or commit it to source control. If you believe your token was exposed, revoke it immediately and generate a new token.
+====
+
+== Available tools
+
+The following tools are available from the Digital Advisor MCP server. Most tools require an identifier that you can obtain by using the `search` tool first.
+
+[cols="1,2,3", options="header"]
+|===
+| Tool | Title | Description
+
+| `search`
+| Search and Scoping Tool
+| Resolves system, cluster, customer, site, and watchlist names into the identifiers required by other tools. Supports cluster, customer, customer group, hostname, serial number, site, system ID, and watchlist searches.
+
+| `summary`
+| Fleet Inventory Summary Tool
+| Returns fleet-wide counts and summaries for systems, clusters, sites, platforms, AutoSupport status, ONTAP upgrades, contract renewals, end-of-support dates, and risks.
+
+| `inventory`
+| Inventory Tool
+| Returns node-level inventory information, including system health, hardware model, operating system, platform type, AutoSupport status, contract details, cluster membership, and recommendations.
+
+| `capacity`
+| Capacity Tool
+| Returns current ONTAP, E-Series, and StorageGRID capacity. Capacity values are returned in KiB. Only systems that sent AutoSupport data within the previous 60 days are included.
+
+| `capacityForecast`
+| Capacity Forecast Tool
+| Returns 18 months of capacity information, which includes 12 months of historical data and a six-month forecast, for one ONTAP cluster, ONTAP system, or StorageGRID system.
+
+| `risks`
+| Risks and Wellness Tool
+| Returns Digital Advisor wellness risks that cover security, ransomware, performance, availability, capacity, configuration, protection, efficiency, interoperability, and sustainability. Results include severity and corrective actions.
+
+| `cases`
+| Support Cases Tool
+| Returns support case details, including status, priority, subject, resolution, reporter, associated system, and RMA part information when available.
+
+| `volumes`
+| Volumes Tool
+| Returns ONTAP volume details, such as state, capacity, encryption, autonomous ransomware protection, efficiency features, protocols, provisioning, workloads, and recommendations.
+
+| `autosupport`
+| AutoSupport Tool
+| Returns AutoSupport messages for ONTAP, E-Series, and StorageGRID. Lists AutoSupport records, lists the sections in a selected record, or retrieves raw section content.
+
+| `ontapClusters`
+| ONTAP Clusters Tool
+| Returns ONTAP cluster details, including cluster name, ONTAP version, management IP address, member nodes, and available upgrade recommendations.
+|===
+

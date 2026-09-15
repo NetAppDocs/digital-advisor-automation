@@ -38,6 +38,13 @@ sidebar:
       url: /create-request.html
     - title: Use example GraphQL queries
       url: /sample-api-queries.html
+  - title: Digital Advisor MCP server
+    entries: 
+    - title: Learn about the Digital Advisor MCP server
+      url: /learn-digital-advisor-mcp.html
+    - title: Get started with the Digital Advisor MCP server
+      url: /get-started-digital-advisor-mcp.html
+
   - title: Migrate from REST to GraphQL
     entries:
     - title: Learn about migrating REST to GraphQL

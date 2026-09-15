@@ -1,0 +1,61 @@
+---
+permalink: learn-digital-advisor-mcp.html
+sidebar: sidebar
+keywords: learn, digital advisor, active-iq, api, query, graphql, api, mcp, model, context, protocol, server, requirements, limitations
+summary: "Learn how to identify deprecated Digital Advisor REST API endpoints and migrate them to their GraphQL replacements."
+---
+= Learn about the Digital Advisor MCP server
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+The Digital Advisor API Model Context Protocol (MCP) server enables compatible AI applications and agents to securely access Digital Advisor information through MCP tools. The server provides tools for discovering systems and customers, reviewing inventory and capacity, identifying risks, retrieving support cases, and accessing AutoSupport information.
+
+== Use cases
+
+You can use the Digital Advisor MCP server to:
+
+* Find systems, clusters, customers, sites, and watchlists.
+* Summarize a storage fleet.
+* Review inventory, contracts, and AutoSupport status.
+* Analyze current and forecasted capacity.
+* Identify wellness risks and recommended corrective actions.
+* Review support cases and Return Merchandise Authorization (RMA) details.
+* Inspect ONTAP volumes and clusters.
+* Retrieve AutoSupport messages and section content.
+
+== How the MCP server works
+
+The Digital Advisor MCP server is a remote MCP server that uses HTTP. Compatible MCP clients connect to the following endpoint:
+
+----
+https://gql.aiq.netapp.com/mcp
+----
+
+Your MCP client sends your Digital Advisor personal access token in the `Authorization` header of each request. The server uses the permissions associated with the token to determine which Digital Advisor information you can access.
+
+[NOTE]
+====
+This endpoint is intended for programmatic access by MCP clients. It does not support direct access from a web browser.
+====
+
+== Requirements
+
+* You must have access to Digital Advisor.
+* You must be registered for Digital Advisor API access.
+* You must have an active Digital Advisor personal access token.
+See _Generate your personal access token to use the Digital Advisor APIs_.
+* Your application must support remote HTTP MCP servers and custom request headers.
+
+== Limitations
+
+* Results are limited to the Digital Advisor information that the authenticated user is authorized to access.
+* Search text must contain 3 through 50 supported characters.
+* Tools that return multiple records might require pagination to retrieve the complete result set.
+* The `capacityForecast` tool accepts one cluster or one system per request.
+* The `capacity` tool includes only systems with recent AutoSupport data.
+* AutoSupport raw section content is truncated at 1 MB.
+
+.What's next?
+
+link:get-started-digital-advisor-mcp.html[Get started with the Digital Advisor MCP server]
