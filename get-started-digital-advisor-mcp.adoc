@@ -9,14 +9,13 @@ summary: "Learn how to identify deprecated Digital Advisor REST API endpoints an
 :imagesdir: ./media/
 
 [.lead]
-Configure the Digital Advisor Model Context Protocol (MCP) server in your MCP client application to securely access Digital Advisor information through MCP tools.
+Configure the Digital Advisor Model Context Protocol (MCP) server in your MCP client application to securely access Digital Advisor information using MCP tools.
 
 == Prerequisites
 
 * You must have access to Digital Advisor.
 * You must be registered for Digital Advisor API access.
-* You must have an active Digital Advisor personal access token.
-See _Generate your personal access token to use the Digital Advisor APIs_.
+* You must have an active Digital Advisor personal access token. For more information, refer to link:generate-pat-token.html[Generate your personal access token to use the Digital Advisor APIs].
 * Your application must support remote HTTP MCP servers and custom request headers.
 
 == Configure your MCP client
@@ -45,7 +44,7 @@ Use the following steps to add the Digital Advisor MCP server to your MCP client
 }
 ----
 
-. Replace `YOUR_PERSONAL_ACCESS_TOKEN` with the token value you saved when you created the token.
+. Replace `YOUR_PERSONAL_ACCESS_TOKEN` with the token value you saved when you link:generate-pat-token.html[generated your personal access token].
 
 . Restart or reload your MCP client so that it connects to the server.
 
@@ -53,36 +52,44 @@ Use the following steps to add the Digital Advisor MCP server to your MCP client
 
 [CAUTION]
 ====
-Your configuration file contains a credential. Do not share it or commit it to source control. If you believe your token was exposed, revoke it immediately and generate a new token.
+Your configuration file contains a credential. Do not share it or commit it to source control. Revoke the token immediately if you believe it was exposed using the steps in link:generate-pat-token.html[Generate your personal access token to use the Digital Advisor APIs].
 ====
 
 == Available tools
 
 The following tools are available from the Digital Advisor MCP server. Most tools require an identifier that you can obtain by using the `search` tool first.
 
+[NOTE]
+====
+* Search text must contain 3 to 50 supported characters.
+* Tools that return multiple records might require pagination to retrieve the complete result set.
+* The `capacityForecast` tool accepts one cluster or one system per request.
+* The `capacity` tool includes only systems with recent AutoSupport data.
+====
+
 [cols="1,2,3", options="header"]
 |===
 | Tool | Title | Description
 
 | `search`
-| Search and Scoping Tool
+| Search and scoping tool
 | Resolves system, cluster, customer, site, and watchlist names into the identifiers required by other tools. Supports cluster, customer, customer group, hostname, serial number, site, system ID, and watchlist searches.
 
 | `summary`
-| Fleet Inventory Summary Tool
+| Fleet inventory summary tool
 | Returns fleet-wide counts and summaries for systems, clusters, sites, platforms, AutoSupport status, ONTAP upgrades, contract renewals, end-of-support dates, and risks.
 
 | `inventory`
-| Inventory Tool
+| Inventory tool
 | Returns node-level inventory information, including system health, hardware model, operating system, platform type, AutoSupport status, contract details, cluster membership, and recommendations.
 
 | `capacity`
-| Capacity Tool
+| Capacity tool
 | Returns current ONTAP, E-Series, and StorageGRID capacity. Capacity values are returned in KiB. Only systems that sent AutoSupport data within the previous 60 days are included.
 
 | `capacityForecast`
-| Capacity Forecast Tool
-| Returns 18 months of capacity information, which includes 12 months of historical data and a six-month forecast, for one ONTAP cluster, ONTAP system, or StorageGRID system.
+| Capacity forecast tool
+| Returns 18 months of capacity information, which includes 12 months of historical data and a 6-month forecast, for one ONTAP cluster, ONTAP system, or StorageGRID system.
 
 | `risks`
 | Risks and Wellness Tool
