@@ -38,7 +38,7 @@ sidebar:
       url: /create-request.html
     - title: Use example GraphQL queries
       url: /sample-api-queries.html
-  - title: Digital Advisor MCP server
+  - title: Use the Digital Advisor MCP server
     entries: 
     - title: Learn about the Digital Advisor MCP server
       url: /learn-digital-advisor-mcp.html
