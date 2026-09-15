@@ -92,11 +92,11 @@ The following tools are available from the Digital Advisor MCP server. Most tool
 | Returns 18 months of capacity information, which includes 12 months of historical data and a 6-month forecast, for one ONTAP cluster, ONTAP system, or StorageGRID system.
 
 | `risks`
-| Risks and Wellness tool
+| Risks and wellness tool
 | Returns Digital Advisor wellness risks that cover security, ransomware, performance, availability, capacity, configuration, protection, efficiency, interoperability, and sustainability. Results include severity and corrective actions.
 
 | `cases`
-| Support Cases tool
+| Support cases tool
 | Returns support case details, including status, priority, subject, resolution, reporter, associated system, and RMA part information when available.
 
 | `volumes`
@@ -108,7 +108,7 @@ The following tools are available from the Digital Advisor MCP server. Most tool
 | Returns AutoSupport messages for ONTAP, E-Series, and StorageGRID. Lists AutoSupport records, lists the sections in a selected record, or retrieves raw section content.
 
 | `ontapClusters`
-| ONTAP Clusters tool
+| ONTAP clusters tool
 | Returns ONTAP cluster details, including cluster name, ONTAP version, management IP address, member nodes, and available upgrade recommendations.
 |===
 
