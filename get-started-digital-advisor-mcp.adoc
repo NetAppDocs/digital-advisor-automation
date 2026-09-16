@@ -1,7 +1,7 @@
 ---
 permalink: get-started-digital-advisor-mcp.html
 sidebar: sidebar
-keywords: learn, digital advisor, active-iq, api, query, graphql, api, mcp, model, context, protocol, server, requirements, limitations
+keywords: learn, digital advisor, active-iq, api, query, graphql, api, mcp, model, context, protocol, server, configure, client, tools, 
 summary: "Learn how to identify deprecated Digital Advisor REST API endpoints and migrate them to their GraphQL replacements."
 ---
 = Get started with the Digital Advisor MCP server
@@ -15,9 +15,9 @@ Configure the Digital Advisor Model Context Protocol (MCP) server in your MCP cl
 
 Before configuring the Digital Advisor MCP server, verify the following:
 
-* You have been approved to use the MCP server by registering with the link:https://forms.cloud.microsoft/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOsssLxTVCFxHlhF7IayUVZFUN1hGMEtBMjJaTUJPRDlTMlhJVVczNVo5TC4u&route=shorturl[Active IQ MCP and Digital Coach Early Access Program^].
 * You have access to Digital Advisor.
 * You are registered for Digital Advisor API access.
+* You have been approved to use the MCP server by registering with the link:https://forms.cloud.microsoft/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOsssLxTVCFxHlhF7IayUVZFUN1hGMEtBMjJaTUJPRDlTMlhJVVczNVo5TC4u&route=shorturl[Active IQ MCP and Digital Coach Early Access Program^].
 * You have an active Digital Advisor personal access token. If you don't already have a token, follow the steps to link:generate-pat-token.html[generate your personal access token to use the Digital Advisor APIs].
 * Your application supports remote HTTP MCP servers and custom request headers.
 
@@ -31,12 +31,14 @@ Use the following steps to add the Digital Advisor MCP server to your MCP client
 
 . Add the Digital Advisor MCP server, and then save the file.
 +
+The following example shows how to add the Digital Advisor MCP server to the MCP configuration file in Visual Studio Code.
++
 [source,json]
 ----
 {
   "servers": {
     "netapp-digital-advisor": {
-      "url": "https://gql.aiq.netapp.com/mcp",
+      "url": "MCP_ENDPOINT_URL",
       "type": "http",
       "headers": {
         "Authorization": "YOUR_PERSONAL_ACCESS_TOKEN"
@@ -46,8 +48,10 @@ Use the following steps to add the Digital Advisor MCP server to your MCP client
   "inputs": []
 }
 ----
++
+* Replace `MCP_ENDPOINT_URL` with the MCP endpoint URL that was provided when you registered for the link:https://forms.cloud.microsoft/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOsssLxTVCFxHlhF7IayUVZFUN1hGMEtBMjJaTUJPRDlTMlhJVVczNVo5TC4u&route=shorturl[Active IQ MCP and Digital Coach Early Access Program^]. 
 
-. Replace `YOUR_PERSONAL_ACCESS_TOKEN` with the token value you saved when you link:generate-pat-token.html[generated your personal access token].
+* Replace `YOUR_PERSONAL_ACCESS_TOKEN` with the token value you saved when you link:generate-pat-token.html[generated your personal access token].
 
 . Restart or reload your MCP client so that it connects to the server.
 
@@ -67,7 +71,7 @@ The following tools are available from the Digital Advisor MCP server. Most tool
 * Tools that return multiple records might require pagination to retrieve the complete result set.
 * The `capacityForecast` tool accepts one cluster or one system per request.
 * The `capacity` tool includes only systems with recent AutoSupport data.
-* AutoSupport raw section content is truncated at 1 MB.
+* AutoSupport raw section content is truncated at 1MB.
 
 [cols="1,3", options="header"]
 |===
@@ -116,7 +120,9 @@ The following tools are available from the Digital Advisor MCP server. Most tool
 
 |`feedback`	
 
-|Submits feedback about tools, including data errors, missing features, or improvement suggestions (no CII/PII).
+|Submits feedback about tools, including data errors, missing features, or improvement suggestions. 
+
+*Note:* Do not include any customer identifiable information or personal identifiable information in the feedback submission.
 
 |===
 
