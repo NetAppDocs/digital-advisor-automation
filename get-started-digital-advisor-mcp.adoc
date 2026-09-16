@@ -78,7 +78,7 @@ The following tools are available from the Digital Advisor MCP server. Most tool
 | Tool | Description
 
 | `search`
-| Resolves system, cluster, customer, site, and watchlist names into the identifiers required by other tools. Supports cluster, customer, customer group, hostname, serial number, site, system ID, and watchlist searches.
+| Finds system, cluster, customer, site, and watchlist identifiers for use with other tools. Supports cluster, customer, customer group, hostname, serial number, site, system ID, and watchlist searches.
 
 | `summary`
 | Returns fleet-wide counts and summaries for systems, clusters, sites, platforms, AutoSupport status, ONTAP upgrades, contract renewals, end-of-support dates, and risks.
