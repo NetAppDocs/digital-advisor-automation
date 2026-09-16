@@ -15,6 +15,7 @@ Configure the Digital Advisor Model Context Protocol (MCP) server in your MCP cl
 
 Before configuring the Digital Advisor MCP server, verify the following:
 
+* You have been approved to use the MCP server by registering with the link:https://forms.cloud.microsoft/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOsssLxTVCFxHlhF7IayUVZFUN1hGMEtBMjJaTUJPRDlTMlhJVVczNVo5TC4u&route=shorturl[Active IQ MCP and Digital Coach Early Access Program^].
 * You have access to Digital Advisor.
 * You are registered for Digital Advisor API access.
 * You have an active Digital Advisor personal access token. If you don't already have a token, follow the steps to link:generate-pat-token.html[generate your personal access token to use the Digital Advisor APIs].
@@ -68,48 +69,54 @@ The following tools are available from the Digital Advisor MCP server. Most tool
 * The `capacity` tool includes only systems with recent AutoSupport data.
 * AutoSupport raw section content is truncated at 1 MB.
 
-[cols="1,1,3", options="header"]
+[cols="1,3", options="header"]
 |===
-| Tool | Title | Description
+| Tool | Description
 
 | `search`
-| Search and scoping tool
 | Resolves system, cluster, customer, site, and watchlist names into the identifiers required by other tools. Supports cluster, customer, customer group, hostname, serial number, site, system ID, and watchlist searches.
 
 | `summary`
-| Fleet inventory summary tool
 | Returns fleet-wide counts and summaries for systems, clusters, sites, platforms, AutoSupport status, ONTAP upgrades, contract renewals, end-of-support dates, and risks.
 
 | `inventory`
-| Inventory tool
 | Returns node-level inventory information, including system health, hardware model, operating system, platform type, AutoSupport status, contract details, cluster membership, and recommendations.
 
 | `capacity`
-| Capacity tool
 | Returns current ONTAP, E-Series, and StorageGRID capacity. Capacity values are returned in KiB. Only systems that sent AutoSupport data within the previous 60 days are included.
 
 | `capacityForecast`
-| Capacity forecast tool
 | Returns 18 months of capacity information, which includes 12 months of historical data and a 6-month forecast, for one ONTAP cluster, ONTAP system, or StorageGRID system.
 
 | `risks`
-| Risks and wellness tool
 | Returns Digital Advisor wellness risks that cover security, ransomware, performance, availability, capacity, configuration, protection, efficiency, interoperability, and sustainability. Results include severity and corrective actions.
 
 | `cases`
-| Support cases tool
 | Returns support case details, including status, priority, subject, resolution, reporter, associated system, and RMA part information when available.
 
 | `volumes`
-| Volumes tool
+
 | Returns ONTAP volume details, such as state, capacity, encryption, autonomous ransomware protection, efficiency features, protocols, provisioning, workloads, and recommendations.
 
 | `autosupport`
-| AutoSupport tool
+
 | Returns AutoSupport messages for ONTAP, E-Series, and StorageGRID. Lists AutoSupport records, lists the sections in a selected record, or retrieves raw section content.
 
 | `ontapClusters`
-| ONTAP clusters tool
 | Returns ONTAP cluster details, including cluster name, ONTAP version, management IP address, member nodes, and available upgrade recommendations.
+
+|`upgradeAdvisor`	
+|Provides ONTAP upgrade readiness information, including risks and blockers for a target ONTAP version, and pre-upgrade checks with warnings and blockers.
+
+|`execute`	
+|Runs read-only GraphQL queries against the platform for advanced or custom data retrieval beyond what the standard tools provide.
+
+|`introspect`	
+|Explores the GraphQL schema to discover available query fields, types, and data structures for building custom queries.
+
+|`feedback`	
+
+|Submits feedback about tools, including data errors, missing features, or improvement suggestions (no CII/PII).
+
 |===
 
