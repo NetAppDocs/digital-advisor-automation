@@ -34,7 +34,7 @@ Your MCP client sends your Digital Advisor personal access token in the `Authori
 
 * You must have access to Digital Advisor and be registered for Digital Advisor API access.
 *  To use the Digital Advisor MCP server, you need to register for the link:https://forms.cloud.microsoft/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOsssLxTVCFxHlhF7IayUVZFUN1hGMEtBMjJaTUJPRDlTMlhJVVczNVo5TC4u&route=shorturl[Active IQ MCP and Digital Coach Early Access Program^].
-* An active Digital Advisor personal access token is required to use the Digital Advisor MCP server. If you don't already have a token, follow the steps to link:generate-pat-token.html[generate your personal access token to use the Digital Advisor APIs].
+* An active Digital Advisor personal access token is required. If you don't already have a token, follow the steps to link:generate-pat-token.html[generate your personal access token to use the Digital Advisor APIs].
 * Your client application must support remote HTTP MCP servers and custom request headers.
 
 .What's next?
