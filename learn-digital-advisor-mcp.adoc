@@ -11,6 +11,8 @@ summary: "Learn how to identify deprecated Digital Advisor REST API endpoints an
 [.lead]
 The Digital Advisor API Model Context Protocol (MCP) server enables compatible AI applications and agents to securely access Digital Advisor information through MCP tools. The server provides tools for discovering systems and customers, reviewing inventory and capacity, identifying risks, retrieving support cases, and accessing AutoSupport information.
 
+NOTE: To use the Digital Advisor MCP server, you need to register for the link:https://forms.cloud.microsoft/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOsssLxTVCFxHlhF7IayUVZFUN1hGMEtBMjJaTUJPRDlTMlhJVVczNVo5TC4u&route=shorturl[Active IQ MCP and Digital Coach Early Access Program^].
+
 == Use cases
 
 You can use the Digital Advisor MCP server to:
@@ -30,12 +32,6 @@ The Digital Advisor MCP server is a remote MCP server that uses HTTP.
 
 Your MCP client sends your Digital Advisor personal access token in the `Authorization` header of each request. The server uses the permissions associated with the token to determine the Digital Advisor information you can access.
 
-== Requirements
-
-* You must have access to Digital Advisor and be registered for Digital Advisor API access.
-*  To use the Digital Advisor MCP server, you need to register for the link:https://forms.cloud.microsoft/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOsssLxTVCFxHlhF7IayUVZFUN1hGMEtBMjJaTUJPRDlTMlhJVVczNVo5TC4u&route=shorturl[Active IQ MCP and Digital Coach Early Access Program^].
-* An active Digital Advisor personal access token is required. If you don't already have a token, follow the steps to link:generate-pat-token.html[generate your personal access token to use the Digital Advisor APIs].
-* Your client application must support remote HTTP MCP servers and custom request headers.
 
 .What's next?
 

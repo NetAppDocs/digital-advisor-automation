@@ -18,7 +18,7 @@ Before configuring the Digital Advisor MCP server, verify the following:
 * You have access to Digital Advisor.
 * You are registered for Digital Advisor API access.
 * You have been approved to use the MCP server by registering with the link:https://forms.cloud.microsoft/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOsssLxTVCFxHlhF7IayUVZFUN1hGMEtBMjJaTUJPRDlTMlhJVVczNVo5TC4u&route=shorturl[Active IQ MCP and Digital Coach Early Access Program^].
-* You have an active Digital Advisor personal access token. If you don't already have a token, follow the steps to link:generate-pat-token.html[generate your personal access token to use the Digital Advisor APIs].
+* You have an active Digital Advisor personal access token. If you don't already have a token, follow the steps to link:generate-pat-token.html[generate your personal access token].
 * Your application supports remote HTTP MCP servers and custom request headers.
 
 == Configure your MCP client
