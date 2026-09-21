@@ -32,7 +32,7 @@ sidebar:
         url: /decide-token-type.html
       - title: Generate a personal access token
         url: /generate-pat-token.html
-    - title: Generate access and refresh tokens
+      - title: Generate access and refresh tokens
         url: /authentication.html
     - title: Create a request
       url: /create-request.html
