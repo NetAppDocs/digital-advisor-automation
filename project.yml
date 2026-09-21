@@ -5,7 +5,7 @@ settings:
     lipi_enabled: true
   prod:
     pdf_enabled: true
-    lipi_enabled: false
+    lipi_enabled: true
     harmony_enabled: false
 sidebar:
   entries:
