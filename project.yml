@@ -26,12 +26,25 @@ sidebar:
 
   - title: Use the Digital Advisor GraphQL API
     entries: 
-    - title: Generate access and refresh tokens
-      url: /authentication.html
+    - title: Generate tokens
+      entries:
+      - title: Choose the token type
+        url: /decide-token-type.html
+      - title: Generate a personal access token
+        url: /generate-pat-token.html
+      - title: Generate access and refresh tokens
+        url: /authentication.html
     - title: Create a request
       url: /create-request.html
     - title: Use example GraphQL queries
       url: /sample-api-queries.html
+  - title: Use the Digital Advisor MCP server
+    entries: 
+    - title: Learn about the Digital Advisor MCP server
+      url: /learn-digital-advisor-mcp.html
+    - title: Get started with the Digital Advisor MCP server
+      url: /get-started-digital-advisor-mcp.html
+
   - title: Migrate from REST to GraphQL
     entries:
     - title: Learn about migrating REST to GraphQL
