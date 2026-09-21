@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: learn, digital advisor, active-iq, api, token, access token, refresh token, personal access token, pat, authentication
 summary: "Decide whether to use access and refresh tokens or a personal access token for Digital Advisor API authentication"
 ---
-= Decide whether to use a personal access token or access and refresh tokens for Digital Advisor API authentication 
+= Decide whether to use a personal access token or access and refresh tokens for Digital Advisor API authentication
 :icons: font
 :imagesdir: ./media/
 

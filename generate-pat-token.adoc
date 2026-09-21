@@ -13,7 +13,7 @@ Learn how to generate, use, and revoke a personal access token before using the 
 
 == Generate your personal access token
 
-You need to generate tokens before you can use the Digital Advisor GraphQL APIs. The following steps show how to generate a personal access token, if you want to use access and refresh tokens instead, refer to xref:authentication.adoc[Generate access and refresh tokens].
+You need to generate tokens before you can use the Digital Advisor GraphQL APIs. The following steps show how to generate a personal access token. If you want to use access and refresh tokens instead, refer to xref:authentication.adoc[Generate access and refresh tokens].
 
 For information on choosing the token type, refer to link:decide-token-type.html[Decide whether to use a personal access token or access and refresh tokens].
 
@@ -68,7 +68,7 @@ Replace `YOUR_PERSONAL_ACCESS_TOKEN` with the token value you saved when you cre
 
 == View personal access token information
 
-The *Personal Access Tokens* tab lists the name, creation date, expiration date, status, and last authenticated date of each token you created. The token value itself is not shown in in this list.
+The *Personal Access Tokens* tab lists the name, creation date, expiration date, status, and last authenticated date of each token you created. The token value itself is not shown in this list.
 
 Each token has one of the following statuses:
 

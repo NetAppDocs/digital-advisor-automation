@@ -2,7 +2,7 @@
 permalink: learn-digital-advisor-mcp.html
 sidebar: sidebar
 keywords: learn, digital advisor, active-iq, api, query, graphql, api, mcp, model, context, protocol, server, requirements, limitations
-summary: "Learn how to identify deprecated Digital Advisor REST API endpoints and migrate them to their GraphQL replacements."
+summary: "Learn what the Digital Advisor Model Context Protocol (MCP) server is, what it can do, and its requirements and limitations."
 ---
 = Learn about the Digital Advisor MCP server
 :icons: font

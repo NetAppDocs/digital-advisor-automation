@@ -1,8 +1,8 @@
 ---
 permalink: get-started-digital-advisor-mcp.html
 sidebar: sidebar
-keywords: learn, digital advisor, active-iq, api, query, graphql, api, mcp, model, context, protocol, server, configure, client, tools, 
-summary: "Learn how to identify deprecated Digital Advisor REST API endpoints and migrate them to their GraphQL replacements."
+keywords: learn, digital advisor, active-iq, api, query, graphql, mcp, model, context, protocol, server, configure, client, tools
+summary: "Configure an MCP client to connect to the Digital Advisor MCP server and use its available tools."
 ---
 = Get started with the Digital Advisor MCP server
 :icons: font
@@ -99,7 +99,6 @@ The following tools are available from the Digital Advisor MCP server. Most tool
 | Returns support case details, including status, priority, subject, resolution, reporter, associated system, and RMA part information when available.
 
 | `volumes`
-
 | Returns ONTAP volume details, such as state, capacity, encryption, autonomous ransomware protection, efficiency features, protocols, provisioning, workloads, and recommendations.
 
 | `autosupport`
@@ -109,18 +108,17 @@ The following tools are available from the Digital Advisor MCP server. Most tool
 | `ontapClusters`
 | Returns ONTAP cluster details, including cluster name, ONTAP version, management IP address, member nodes, and available upgrade recommendations.
 
-|`upgradeAdvisor`	
-|Provides ONTAP upgrade readiness information, including risks and blockers for a target ONTAP version, and pre-upgrade checks with warnings and blockers.
+| `upgradeAdvisor`
+| Provides ONTAP upgrade readiness information, including risks and blockers for a target ONTAP version, and pre-upgrade checks with warnings and blockers.
 
-|`execute`	
-|Runs read-only GraphQL queries against the platform for advanced or custom data retrieval beyond what the standard tools provide.
+| `execute`
+| Runs read-only GraphQL queries against the platform for advanced or custom data retrieval beyond what the standard tools provide.
 
 |`introspect`	
 |Explores the GraphQL schema to discover available query fields, types, and data structures for building custom queries.
 
-|`feedback`	
-
-|Submits feedback about tools, including data errors, missing features, or improvement suggestions. 
+| `feedback`
+| Submits feedback about tools, including data errors, missing features, or improvement suggestions.
 
 *Note:* Do not include any customer identifiable information or personal identifiable information in the feedback submission.
 
