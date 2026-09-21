@@ -1,0 +1,38 @@
+---
+permalink: learn-digital-advisor-mcp.html
+sidebar: sidebar
+keywords: learn, digital advisor, active-iq, api, query, graphql, api, mcp, model, context, protocol, server, requirements, limitations
+summary: "Learn what the Digital Advisor Model Context Protocol (MCP) server is, what it can do, and its requirements and limitations."
+---
+= Learn about the Digital Advisor MCP server
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+The Digital Advisor API Model Context Protocol (MCP) server enables compatible AI applications and agents to securely access Digital Advisor information through MCP tools. The server provides tools for discovering systems and customers, reviewing inventory and capacity, identifying risks, retrieving support cases, and accessing AutoSupport information.
+
+NOTE: To use the Digital Advisor MCP server, you need to register for the link:https://forms.cloud.microsoft/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOsssLxTVCFxHlhF7IayUVZFUN1hGMEtBMjJaTUJPRDlTMlhJVVczNVo5TC4u&route=shorturl[Active IQ MCP and Digital Coach Early Access Program^].
+
+== Use cases
+
+You can use the Digital Advisor MCP server to:
+
+* Find systems, clusters, customers, sites, and watchlists.
+* Summarize a storage fleet.
+* Review inventory, contracts, and AutoSupport status.
+* Analyze current and forecasted capacity.
+* Identify wellness risks and recommended corrective actions.
+* Review support cases and Return Merchandise Authorization (RMA) details.
+* Inspect ONTAP volumes and clusters.
+* Retrieve AutoSupport messages and section content.
+
+== How the MCP server works
+
+The Digital Advisor MCP server is a remote MCP server that uses HTTP. 
+
+Your MCP client sends your Digital Advisor personal access token in the `Authorization` header of each request. The server uses the permissions associated with the token to determine the Digital Advisor information you can access.
+
+
+.What's next?
+
+link:get-started-digital-advisor-mcp.html[Get started with the Digital Advisor MCP server]
