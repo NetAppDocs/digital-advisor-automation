@@ -555,11 +555,7 @@ query($customerId: String, $after: String) {
 
 === Find systems impacted by a CVE
 
-You can use this query to list open security risks, the CVEs associated with each risk, and the systems that have that risk.
-
-Page through the results, keep the risks that list the CVE you need, and sort the systems in your application.
-
-Use this GraphQL query to list open security risks, the CVEs associated with each risk, and the systems that have each risk.
+You can use this query to list open security risks, the CVEs associated with each risk, and the systems that have that risk. Page through the results, keep the risks that list the CVE you need, and sort the systems in your application.
 
 .Show example
 [%collapsible]
@@ -600,8 +596,6 @@ query SystemsForCve($customerId: String!, $after: String) {
 }
 ----
 ====
-
-Page through the results using `cursor` as the next `after` value. Keep the risks whose `cves` include the CVE you need, then sort the matching systems in your application.
 
 == Sustainability and energy management
 
