@@ -553,9 +553,9 @@ query($customerId: String, $after: String) {
 ----
 ====
 
-=== Find systems impacted by Common Vulnerabilities and Exposures (CVE)
+=== Find systems impacted by Common Vulnerabilities and Exposures (CVEs)
 
-You can use this query to list open security risks, the CVEs associated with each risk, and the systems that have that risk. Page through the results, keep the risks that list the CVE you need, and sort the systems in your application.
+You can use this query to list open security risks, the CVEs associated with each risk, and the systems that have that risk. Navigate through the results, keep the risks that list the CVE you need, and sort the systems in your application.
 
 .Show example
 [%collapsible]
