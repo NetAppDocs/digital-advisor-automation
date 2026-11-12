@@ -553,6 +553,50 @@ query($customerId: String, $after: String) {
 ----
 ====
 
+=== Find systems impacted by Common Vulnerabilities and Exposures (CVEs)
+
+You can use this query to list open security risks, the CVEs associated with each risk, and the systems that have that risk. Navigate through the results, keep the risks that list the CVE you need, and sort the systems in your application.
+
+.Show example
+[%collapsible]
+====
+[source,graphql]
+----
+query SystemsForCve($customerId: String!, $after: String) {
+  risks(
+    customerId: $customerId
+    after: $after
+    pageSize: 25
+    filter: { impactAreas: [SECURITY], isRiskAcknowledged: false }
+  ) {
+    cursor
+    totalCount
+    risks {
+      riskId
+      shortName
+      severity
+      potentialImpact
+      correctiveAction { displayName url }
+      cves { id cvssScore summary description lastUpdated }
+      riskInstances(pageSize: -1) {
+        riskTriggeredDate
+        riskLastTriggeredDate
+        systemRiskDetail
+        fixedVersions { displayName url }
+        system {
+          hostName
+          serialNumber
+          systemId
+          osVersion
+          platformType
+        }
+      }
+    }
+  }
+}
+----
+====
+
 == Sustainability and energy management
 
 You can use this query to monitor actual and published power consumption, as well as projected power, heat, and carbon metrics.
